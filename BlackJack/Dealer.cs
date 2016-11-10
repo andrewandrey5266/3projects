@@ -9,11 +9,13 @@ namespace BlackJack
     class Dealer : Player
     {
         Pack pack;
+        public List<IGetCard> DistributeCards;
 
-        public Dealer() : base("Dealer")
+        public Dealer(PackType packType) : base("Dealer")
         {
-            pack = new Pack();      
+            pack = new Pack(packType);      
         }
+        [Obsolete("Use HandOutCards instead")]
         public bool TakeCard(List<Player> players)
         {
             bool trigger = true;
@@ -28,11 +30,24 @@ namespace BlackJack
 
             return trigger;
         }
+
+        public bool HandOutCards()
+        {
+            bool trigger = true;
+
+            foreach (var method in DistributeCards)
+                if (((Player)method).Pass == false & (trigger = false))
+                    method.AddCard(pack.PopCard());
+
+            return trigger;
+                
+        }
+
         public string GetCardName(int card)
         {
             return pack.numToCardname[card];
         }
-        public string ChooseWinner(Player player1, Player player2)
+        public string ChooseWinner(Player player1, Player player2)//list of players
         {
             int score1 = player1.Score;
             int score2 = player2.Score;
@@ -63,12 +78,7 @@ namespace BlackJack
 
             return "result is unknown";// not handled
         }
-        public override void AddCard(int card)
-        {
-            base.AddCard(card);
-            if (Score > 17)
-                Pass = true;
-        }
+        
 
 
     }

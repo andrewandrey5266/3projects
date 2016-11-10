@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BJSystem.cs" />
     <Compile Include="Dealer.cs" />
+    <Compile Include="GameSession.cs" />
     <Compile Include="Pack.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />

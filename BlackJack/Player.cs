@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
-    class Player
+    interface IGetCard
     {
+        void AddCard(int value);
+    }
+    class Player : IGetCard
+    {
+
         public string Name { get; private set; }
         public int Score { get; private set; }
         public List<int> Cards { get; private set; }
-        private bool pass;
 
+        private bool pass;
         public bool Pass
         {
             get { return pass; }
@@ -23,11 +28,11 @@ namespace BlackJack
             Name = name;
             Cards = new List<int>();         
         }
-        public virtual void AddCard(int card)
+       
+        public void AddCard(int value)
         {
-            Cards.Add(card);
-            Score += card;            
+            Score += value;
+            Cards.Add(value);
         }
-        
     }
 }
