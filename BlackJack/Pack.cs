@@ -18,7 +18,7 @@ namespace BlackJack
         public int PopCard()
         {
             if (cards.Length == 0)
-                cards = (int[]) BJSystem.GetCardDeck(packType);
+                ChangePack();
 
             int index = rand.Next(0, cards.Length - 1);
             int value = cards[index];
@@ -30,11 +30,11 @@ namespace BlackJack
             cards = temp;
 
             return value;
+        }        
+
+        public void ChangePack()
+        {
+            cards = (int[])BJSystem.GetCardDeck(packType);
         }
-
-        
-
-
-
     }
 }

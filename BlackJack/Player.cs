@@ -17,22 +17,32 @@ namespace BlackJack
         public int Score { get; private set; }
         public List<int> Cards { get; private set; }
 
-        private bool pass;
-        public bool Pass
-        {
-            get { return pass; }
-            set { pass = !pass ? value : pass; }
-        }
+        //private bool pass;
+        //public bool Pass
+        //{
+        //    get { return pass; }
+        //    set { pass = !pass ? value : pass; }
+        //}
+        public Func<bool> IsPassing;
+
         public Player(string name)
         {
             Name = name;
-            Cards = new List<int>();         
+            Init();
         }
        
         public void AddCard(int value)
         {
             Score += value;
             Cards.Add(value);
+           
+        }
+
+        public virtual void Init()
+        {
+            IsPassing = () => false;
+            Score = 0;
+            Cards = new List<int>();
         }
     }
 }

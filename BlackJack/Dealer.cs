@@ -8,75 +8,49 @@ namespace BlackJack
 {   
     class Dealer : Player
     {
-        Pack pack;
+        public Pack Pack { get; private set; }
+        
         public List<IGetCard> DistributeCards;
 
         public Dealer(PackType packType) : base("Dealer")
         {
-            pack = new Pack(packType);      
+            Pack = new Pack(packType);
+            DistributeCards = new List<IGetCard>();
+
+            //pass condition for dealer
+            IsPassing = () => Score > 17;
         }
-        [Obsolete("Use HandOutCards instead")]
-        public bool TakeCard(List<Player> players)
-        {
-            bool trigger = true;
-
-            //players got their cards 
-            for (int i = 0; i < players.Count; i++)
-                if (!players[i].Pass)
-                {
-                    trigger = false;
-                    players[i].AddCard(pack.PopCard());
-                }
-
-            return trigger;
-        }
-
+        
         public bool HandOutCards()
         {
             bool trigger = true;
 
             foreach (var method in DistributeCards)
-                if (((Player)method).Pass == false & (trigger = false))
-                    method.AddCard(pack.PopCard());
+                if (((Player)method).IsPassing() == false)
+                {
+                    trigger = false;
+                    method.AddCard(Pack.PopCard());
+                }
 
-            return trigger;
-                
+            return trigger;                
+        }
+        public string ChooseWinner(List<Player> players)//list of players
+        {
+            var result = new StringBuilder("Score Table\n\n");
+            foreach (var c in players)
+            {
+                result.Append(string.Format("Name: {0}, Score {1}, Cards = [", c.Name, c.Score));
+                result.Append(string.Join(", ", c.Cards));
+                result.Append(" ]\n\n");
+            }
+            return result.Append("the friendship has won\n").ToString();
         }
 
-        public string GetCardName(int card)
+        public override void Init()
         {
-            return pack.numToCardname[card];
-        }
-        public string ChooseWinner(Player player1, Player player2)//list of players
-        {
-            int score1 = player1.Score;
-            int score2 = player2.Score;
+            base.Init();           
+            IsPassing = () => Score > 17;
 
-            // player1 won
-            if (score1 <= 21 &&
-                ((score1 == 21 && score2 != 21) ||
-                (score1 < 21 && (score2 > 21
-                                || (score2 < 21 && score1 > score2)))))
-            {
-                return player1.Name + " won";
-            }
-
-            // player2 won
-            if (score2 <= 21 &&
-               ((score2 == 21 && score1 != 21) ||
-               (score2 < 21 && (score1 > 21
-                               || (score1 < 21 && score2 > score1)))))
-            {
-                return player2.Name + " won";
-            }
-
-            // both won
-            if (score1 == score2 && score1 <= 21)
-                return "Both players won";
-            if (score1 > 21 && score2 > 21)
-                return "Both players lost";
-
-            return "result is unknown";// not handled
         }
         
 

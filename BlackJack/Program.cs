@@ -12,6 +12,8 @@ namespace BlackJack
         {
             var game = new GameSession(PackType.small, new Player("Player1"));
             game.StartGame();
+
+            Console.ReadKey();
         }
     }
     
