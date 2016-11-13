@@ -13,7 +13,7 @@ namespace BlackJack
         {
             this.packType = packType;
             cards = (int[]) BJSystem.GetCardDeck(packType);
-            numToCardname = (Dictionary<int,string>) BJSystem.GetCardDic(packType);
+            numToCardname = (Dictionary<int,string>) BJSystem.GetCardDict(packType);
         }
         public int PopCard()
         {

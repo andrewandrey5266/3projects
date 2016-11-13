@@ -10,8 +10,9 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            var game = new GameSession(PackType.small, new Player("Player1"));
-            game.StartGame();
+            new GameSession(PackType.small, 
+                new ConsoleStream(), 
+                new Player("Player1")).StartGame();
 
             Console.ReadKey();
         }

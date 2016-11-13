@@ -50,7 +50,7 @@ namespace BlackJack
             else
                 return cardDeck36;
         }
-        public static IDictionary<int, string> GetCardDic(PackType packType)
+        public static IDictionary<int, string> GetCardDict(PackType packType)
         {
             if (packType == PackType.big)            
                return cardDictionary52;            
@@ -62,11 +62,6 @@ namespace BlackJack
         {
             return cardDictionary36[value];
         }
-
-        public static string ChooseWinnerLooser(IEnumerable<Player> players)
-        {
-            return "";
-        }
- 
+              
     }
 }

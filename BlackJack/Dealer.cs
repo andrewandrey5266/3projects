@@ -11,6 +11,7 @@ namespace BlackJack
         public Pack Pack { get; private set; }
         
         public List<IGetCard> DistributeCards;
+        
 
         public Dealer(PackType packType) : base("Dealer")
         {
@@ -18,7 +19,7 @@ namespace BlackJack
             DistributeCards = new List<IGetCard>();
 
             //pass condition for dealer
-            IsPassing = () => Score > 17;
+            Init();
         }
         
         public bool HandOutCards()
@@ -49,10 +50,8 @@ namespace BlackJack
         public override void Init()
         {
             base.Init();           
-            IsPassing = () => Score > 17;
-
-        }
-        
+            IsPassing = () => Score >= 17;
+        }       
 
 
     }

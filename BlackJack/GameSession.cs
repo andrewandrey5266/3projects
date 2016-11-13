@@ -11,10 +11,10 @@ namespace BlackJack
         // ?? Initialize here or in constructor ??
         public Dealer dealer;
         public List<Player> players;// dealer, player1, player2, ...
-        public IInputOutput<string,int> cs;
-        public GameSession(PackType packType, params Player[] players)
+        public IInputOutput cs;
+        public GameSession(PackType packType, IInputOutput IOStream, params Player[] players)
         {
-            cs = new ConsoleStream<string,int>(); // init io stream
+            cs = IOStream; // init io stream
             this.dealer = new Dealer(packType);
             this.players = new List<Player>();
 
@@ -48,7 +48,7 @@ namespace BlackJack
             else if (response == 2)
                 EndGame();
         }
-        public void DoGameIteration()
+        private void DoGameIteration()
         {
             //-Get
             cs.Output("1 - TakeCard\n2 - Pass\n");
@@ -73,7 +73,7 @@ namespace BlackJack
                 
             }
         }
-        public void PostIteration()
+        private void PostIteration()
         {
             cs.Output(dealer.ChooseWinner(players));
             cs.Output("Try again?\n1 - Yes\n2 - No\n");
@@ -88,19 +88,19 @@ namespace BlackJack
             else if (response == 2)
                 EndGame();
         }
-        public void EndGame()
+        private void EndGame()
         {
-
-            Output("Thx for your gems");
+            cs.Output("Thx for your gems");
         }       
     }
 
     
-    class ConsoleStream<T, K> : IInputOutput<T, K>
+    class ConsoleStream : IInputOutput
     {
         Func<string> InputStream = Console.ReadLine;
         Action<string> OutputStream = Console.Write;
-        public K Input()
+
+        public int Input()
         {
             while (true)
             {
@@ -111,22 +111,22 @@ namespace BlackJack
 
                 if (response != 1 && response != 2)
                 {
-                    Output("Wrong input, try again!\n");
+                    OutputStream("Wrong input, try again!\n");
                     continue;
                 }
                 else
                     return response;
             }
         }
-        public void Output(T str)
+        public void Output(string str)
         {
             OutputStream(str);
         }
     }
    
-    interface IInputOutput<T, K>
+    interface IInputOutput
     {
-        void Output(T str);
-        K Input();
+        void Output(string str);
+        int Input();
     }
 }

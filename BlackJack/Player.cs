@@ -17,12 +17,7 @@ namespace BlackJack
         public int Score { get; private set; }
         public List<int> Cards { get; private set; }
 
-        //private bool pass;
-        //public bool Pass
-        //{
-        //    get { return pass; }
-        //    set { pass = !pass ? value : pass; }
-        //}
+       
         public Func<bool> IsPassing;
 
         public Player(string name)
@@ -34,8 +29,7 @@ namespace BlackJack
         public void AddCard(int value)
         {
             Score += value;
-            Cards.Add(value);
-           
+            Cards.Add(value);           
         }
 
         public virtual void Init()
