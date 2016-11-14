@@ -47,15 +47,15 @@ namespace BlackJack
         {
             if (packType == PackType.big)
                 return cardDeck52;
-            else
-                return cardDeck36;
+            
+            return cardDeck36;
         }
         public static IDictionary<int, string> GetCardDict(PackType packType)
         {
             if (packType == PackType.big)            
                return cardDictionary52;            
-            else
-                return cardDictionary36;
+            
+            return cardDictionary36;
         }
 
         public static string GetCardName(int value)

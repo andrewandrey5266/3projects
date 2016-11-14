@@ -37,12 +37,14 @@ namespace BlackJack
         }
         public string ChooseWinner(List<Player> players)//list of players
         {
+            //players.Sort();
+
             var result = new StringBuilder("Score Table\n\n");
             foreach (var c in players)
             {
-                result.Append(string.Format("Name: {0}, Score {1}, Cards = [", c.Name, c.Score));
+                result.Append(string.Format("Name: {0} Cards = [", c.Name));
                 result.Append(string.Join(", ", c.Cards));
-                result.Append(" ]\n\n");
+                result.Append(string.Format(" ] = {0}\n\n", c.Score));
             }
             return result.Append("the friendship has won\n").ToString();
         }

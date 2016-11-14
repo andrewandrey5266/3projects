@@ -9,9 +9,9 @@ namespace BlackJack
     class GameSession
     {
         // ?? Initialize here or in constructor ??
-        public Dealer dealer;
-        public List<Player> players;// dealer, player1, player2, ...
-        public IInputOutput cs;
+        private Dealer dealer;
+        private List<Player> players;// dealer, player1, player2, ...
+        private IInputOutput cs;
         public GameSession(PackType packType, IInputOutput IOStream, params Player[] players)
         {
             cs = IOStream; // init io stream
@@ -26,15 +26,9 @@ namespace BlackJack
 
             // Interactive start
         }
-        public void PrepareForNewGame()
-        {
-            foreach(var player in players)
-                player.Init();            
-            dealer.Pack.ChangePack();
-        }
+       
         //into separate class
-        
-      
+              
         public void StartGame()
         {
             //-Get
@@ -45,8 +39,9 @@ namespace BlackJack
             //-Post
             if (response == 1)
                 DoGameIteration();
-            else if (response == 2)
+            if (response == 2)
                 EndGame();
+            
         }
         private void DoGameIteration()
         {
@@ -65,7 +60,7 @@ namespace BlackJack
                 DoGameIteration();
                 
             }
-            else if (response == 2)
+            if (response == 2)
             {
                 players[1].IsPassing = () => true;
                 while (dealer.HandOutCards() == false) ;
@@ -85,33 +80,37 @@ namespace BlackJack
                 PrepareForNewGame();
                 StartGame();
             }
-            else if (response == 2)
+            if (response == 2)
                 EndGame();
         }
         private void EndGame()
         {
             cs.Output("Thx for your gems");
-        }       
+        }
+
+        private void PrepareForNewGame()
+        {
+            foreach (var player in players)
+                player.Init();
+            dealer.Pack.ChangePack();
+        }
     }
 
     
     class ConsoleStream : IInputOutput
-    {
-        Func<string> InputStream = Console.ReadLine;
-        Action<string> OutputStream = Console.Write;
-
+    {        
         public int Input()
         {
             while (true)
             {
-                string str = InputStream();
+                string str = Console.ReadLine();
 
                 int response;
                 int.TryParse(str, out response);
 
                 if (response != 1 && response != 2)
                 {
-                    OutputStream("Wrong input, try again!\n");
+                    Console.Write("Wrong input, try again!\n");
                     continue;
                 }
                 else
@@ -120,7 +119,7 @@ namespace BlackJack
         }
         public void Output(string str)
         {
-            OutputStream(str);
+            Console.Write(str);
         }
     }
    
