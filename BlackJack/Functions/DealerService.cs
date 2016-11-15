@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Text;
 using BlackJack.Models;
-
+using System.Linq;
 namespace BlackJack.Functions
 {
     class DealerService :  IComparer<Player>
     {
         public Dealer dealer { get; }
 
-        private PackService packService;       
-        List<PlayerService> playersServices = new List<PlayerService>();
-
+        private PackService packService;
+        public List<PlayerService> playersServices { get; } = new List<PlayerService>();
         public DealerService(Dealer dealer, params Player [] players)
         {
             this.dealer = dealer;
@@ -22,7 +21,8 @@ namespace BlackJack.Functions
             //initialize PlayerService List
             this.playersServices.Add(new PlayerService(dealer));
             foreach (var p in players)
-                playersServices.Add(new PlayerService(p));            
+                playersServices.Add(new PlayerService(p));
+                      
         }
 
         public bool HandOutCards()
@@ -42,10 +42,12 @@ namespace BlackJack.Functions
         }
         public string GetRateList(List<Player> players)//list of players
         {
-            players.Sort(this);               
-                        
+            // in order to leave list of players unchanged , dealer should be 0 component, me 1st component
+            List<Player> sortedPlayers = new List<Player>(players.Select(p => (Player) p.Clone()));
+            sortedPlayers.Sort(this);    
+
             var result = new StringBuilder("Score Table\n\n");
-            foreach (var c in players)
+            foreach (var c in sortedPlayers)
             {
                 result.Append(string.Format("Name: {0} Cards = [", c.Name));
                 result.Append(string.Join(", ", c.Cards));
@@ -57,10 +59,10 @@ namespace BlackJack.Functions
         {
             foreach (var c in playersServices)
                 c.Init();           
-            this.packService.ChangePack();
-        }       
+            this.packService.ChangePack();                      
+        }
         public int Compare(Player player1, Player player2)
-        {            
+        {
             int score1 = player1.Score;
             int score2 = player2.Score;
 
@@ -78,5 +80,6 @@ namespace BlackJack.Functions
             return score1.CompareTo(score2);
 
         }
+
     }
 }

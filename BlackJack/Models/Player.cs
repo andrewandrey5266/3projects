@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System;
-
+using System.Linq;
 namespace BlackJack.Models
 {
 
-    class Player
+    class Player : ICloneable
     {
         public string Name { get; set; }
         public int Score { get; set; }
@@ -20,6 +20,16 @@ namespace BlackJack.Models
         public Player(string name, Func<bool> condition) : this(name)
         {
             IsPassing = condition;
+        }
+
+        public object Clone()
+        {
+            return new Player(this.Name)
+            {
+                Score = this.Score,
+                Cards = new List<int>(this.Cards.Select(p => p)),
+                IsPassing = this.IsPassing
+            };
         }
     }
 }
