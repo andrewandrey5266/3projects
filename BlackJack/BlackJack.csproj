@@ -42,16 +42,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BJSystem.cs" />
-    <Compile Include="Dealer.cs" />
+    <Compile Include="ConsoleStream.cs" />
+    <Compile Include="Functions\DealerService.cs" />
+    <Compile Include="Functions\PackService.cs" />
+    <Compile Include="Functions\PlayerService.cs" />
+    <Compile Include="IGetCard.cs" />
+    <Compile Include="Models\Dealer.cs" />
     <Compile Include="GameSession.cs" />
-    <Compile Include="Pack.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Models\Pack.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

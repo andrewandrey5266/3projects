@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System;
+using BlackJack.Models;
 
 namespace BlackJack
 {
@@ -8,7 +9,7 @@ namespace BlackJack
         big = 52,
         small = 36
     }
-    static class BJSystem
+    static class BJSystem 
     {     
         static int[] cardDeck36;
         static Dictionary<int, string> cardDictionary36;
@@ -47,21 +48,25 @@ namespace BlackJack
         {
             if (packType == PackType.big)
                 return cardDeck52;
-            
-            return cardDeck36;
+            if (packType == PackType.small)
+                return cardDeck36;
+
+            return null;
         }
         public static IDictionary<int, string> GetCardDict(PackType packType)
         {
             if (packType == PackType.big)            
                return cardDictionary52;            
-            
-            return cardDictionary36;
+            if(packType == PackType.small)
+               return cardDictionary36;
+
+            return null;
         }
 
         public static string GetCardName(int value)
         {
             return cardDictionary36[value];
         }
-              
+        
     }
 }
