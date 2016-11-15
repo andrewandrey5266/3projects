@@ -53,6 +53,7 @@ namespace BlackJack
 
             return null;
         }
+        [Obsolete("isn't practical, use GetCardName method instead")]
         public static IDictionary<int, string> GetCardDict(PackType packType)
         {
             if (packType == PackType.big)            

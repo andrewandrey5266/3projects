@@ -5,49 +5,45 @@ using BlackJack.Models;
 
 namespace BlackJack.Functions
 {
-    class DealerService : IGetCard, IComparer<Player>
+    class DealerService :  IComparer<Player>
     {
         public Dealer dealer { get; }
 
-        private PackService packService;
-        private PlayerService playerService;
+        private PackService packService;       
+        List<PlayerService> playersServices = new List<PlayerService>();
 
-        public DealerService(Dealer dealer, PlayerService playerService)
+        public DealerService(Dealer dealer, params Player [] players)
         {
             this.dealer = dealer;
-
+            
+            //initialize PackService
             packService = new PackService(dealer.Pack);
-            this.playerService = playerService;
+
+            //initialize PlayerService List
+            this.playersServices.Add(new PlayerService(dealer));
+            foreach (var p in players)
+                playersServices.Add(new PlayerService(p));            
         }
+
         public bool HandOutCards()
         {
             bool trigger = true;
-
-            if (playerService.player.IsPassing == false)
+            
+            foreach (var c in playersServices)
             {
-                trigger = false;
-                playerService.AddCard(packService.PopCard());
-            }
-            this.dealer.IsPassing = this.dealer.Score > 17;
-            if (this.dealer.IsPassing == false)
-            {
-                trigger = false;
-                this.AddCard(packService.PopCard());
+                if (c.player.IsPassing() == false)
+                {
+                    trigger = false;
+                    c.AddCard(packService.PopCard());
+                }
             }
 
             return trigger;
         }
-        public string ChooseWinner(List<Player> players)//list of players
+        public string GetRateList(List<Player> players)//list of players
         {
-            try
-            {
-                players.Sort(this);               
-            }
-            catch (InvalidOperationException ioe)
-            {
-                Console.Write(ioe.InnerException.Message);
-            }
-            
+            players.Sort(this);               
+                        
             var result = new StringBuilder("Score Table\n\n");
             foreach (var c in players)
             {
@@ -56,27 +52,15 @@ namespace BlackJack.Functions
                 result.Append(string.Format(" ] = {0}\n\n", c.Score));
             }
             return result.ToString();
-        }
-
-        public void AddCard(int value)
-        {
-            dealer.Score += value;
-            dealer.Cards.Add(value);
-        }
+        }              
         public void InitAll()
         {
-            playerService.Init();
-            this.Init();
+            foreach (var c in playersServices)
+                c.Init();           
             this.packService.ChangePack();
-        }
-        private void Init()
-        {
-            dealer.Score = 0;
-            dealer.Cards = new List<int>();
-            
-        }
+        }       
         public int Compare(Player player1, Player player2)
-        {
+        {            
             int score1 = player1.Score;
             int score2 = player2.Score;
 

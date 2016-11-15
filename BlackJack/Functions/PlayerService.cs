@@ -11,6 +11,7 @@ namespace BlackJack.Functions
         {
             this.player = player;
         }        
+
         public void AddCard(int value)
         {
             player.Score += value;
@@ -18,11 +19,10 @@ namespace BlackJack.Functions
         }
         public void Init()
         {
-            player.IsPassing = false;     
+            if (player.Name != "Dealer")
+                player.IsPassing = () => false;    
             player.Score = 0;
             player.Cards = new List<int>();
         }
-
-
     }
 }

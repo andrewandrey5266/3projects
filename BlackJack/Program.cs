@@ -11,8 +11,8 @@ namespace BlackJack
     {
         static void Main(string[] args)
         {
-            new GameSession(PackType.small, 
-                new ConsoleStream(), 
+            new GameSession(new ConsoleStream(), 
+                PackType.small,                 
                 new Player("Player1")).StartGame();
 
             Console.ReadKey();

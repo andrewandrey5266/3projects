@@ -18,17 +18,16 @@ namespace BlackJack
         private DealerService dealerService;
         //
 
-        public GameSession(PackType packType, ConsoleStream IOStream, Player player)
+        public GameSession(ConsoleStream IOStream, PackType packType, params Player [] player)
         {
             consoleStream = IOStream; // init io stream
             this.dealer = new Dealer(packType);
             
             this.players.Add(dealer);
-            this.players.Add(player);
+            this.players.AddRange(player);
             
             // add services
-            dealerService = new DealerService(dealer,
-                                             new PlayerService(player));
+            dealerService = new DealerService(dealer, player);
         }
        
         //into separate class
@@ -59,13 +58,15 @@ namespace BlackJack
                 dealerService.HandOutCards();
                                 
                 consoleStream.Output(string.Format("You've pulled {0}\nYour current score {1}\n",
-                    BJSystem.GetCardName(players[1].Cards.Last()), players[1].Cards.Sum()));
+                    BJSystem.GetCardName(players[1].Cards.Last()), 
+                    players[1].Score));
 
                 DoGameIteration();                
             }
             if (response == 2)
             {
-                players[1].IsPassing = true;
+                players[1].IsPassing = () => true;
+
                 int i = 0;
                 while (dealerService.HandOutCards() == false && i < 10)
                 {
@@ -81,7 +82,7 @@ namespace BlackJack
         }
         private void PostIteration()
         {
-            consoleStream.Output(dealerService.ChooseWinner(players));
+            consoleStream.Output(dealerService.GetRateList(players));
             consoleStream.Output("Try again?\n1 - Yes\n2 - No\n");
 
             int response = consoleStream.Input();
