@@ -11,6 +11,7 @@ namespace BlackJack.Functions
 
         private PackService packService;
         public List<PlayerService> playersServices { get; } = new List<PlayerService>();
+
         public DealerService(Dealer dealer, params Player [] players)
         {
             this.dealer = dealer;
@@ -80,6 +81,5 @@ namespace BlackJack.Functions
             return score1.CompareTo(score2);
 
         }
-
     }
 }

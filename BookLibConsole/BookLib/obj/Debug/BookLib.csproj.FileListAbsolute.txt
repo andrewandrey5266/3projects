@@ -1,0 +1,4 @@
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\bin\Debug\BookLib.dll
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\bin\Debug\BookLib.pdb
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\obj\Debug\BookLib.dll
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\obj\Debug\BookLib.pdb

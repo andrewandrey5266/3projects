@@ -1,0 +1,8 @@
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.exe.config
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.exe
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.pdb
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug\BookLib.dll
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug\BookLib.pdb
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.exe
+C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.pdb
