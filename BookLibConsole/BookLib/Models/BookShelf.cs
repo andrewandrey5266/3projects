@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace BookLib
 {
-    class BookService
+    public class BookShelf
     {
+        public List<Book> books { get; set; }
+
+        public BookShelf() {
+            books = new List<Book>();
+        }
+
     }
 }

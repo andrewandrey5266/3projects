@@ -16,6 +16,14 @@ namespace BookLib
         public int Year { get; set; }
 
         public Book() { }
+        public Book(string name, int numOfPages, List<string> authors, int year)
+        {
+            this.Name = name;
+            this.NumOfPages = numOfPages;
+            this.Authors = authors;
+            this.Year = year;
+
+        }
        
     }
 }

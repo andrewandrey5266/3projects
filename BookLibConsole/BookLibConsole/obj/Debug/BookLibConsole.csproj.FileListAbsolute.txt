@@ -6,3 +6,11 @@ C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\bin\Debug
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.exe
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.exe.config
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.exe
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\obj\Debug\BookLibConsole.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.exe
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLib.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLib.pdb
