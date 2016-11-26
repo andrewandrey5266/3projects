@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookLib
 {
+    [Serializable] 
     public class BookShelf
     {
         public List<Book> Books { get; set; }
         public string Name { get; set; }
-        public BookShelf()
+
+        public BookShelf() : this("default1") { }
+
+        public BookShelf(string Name)
         {
+            this.Name = Name;
             Books = new List<Book>();
         }
-
     }
 }

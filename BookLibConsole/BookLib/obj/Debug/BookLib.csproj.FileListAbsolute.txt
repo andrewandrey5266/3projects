@@ -2,8 +2,9 @@ C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\bin\Debug\BookLi
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\bin\Debug\BookLib.pdb
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\obj\Debug\BookLib.dll
 C:\Users\Dusheba\Desktop\5 semester\dass\BookLibConsole\BookLib\obj\Debug\BookLib.pdb
-C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\obj\Debug\BookLib.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\obj\Debug\BookLib.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\obj\Debug\BookLib.pdb
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\BookLib.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\BookLib.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\Newtonsoft.Json.xml

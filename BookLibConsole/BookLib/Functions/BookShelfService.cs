@@ -5,12 +5,13 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Threading.Tasks;
 using System.IO;
+using Newtonsoft.Json;
 using System.Windows.Forms;
 namespace BookLib
 {
     public class BookShelfService
     {
-        public BookShelf bookShelf { get; private set; }
+        public BookShelf bookShelf { get; set; }
         public BookShelfService(BookShelf bookShelf)
         {
             this.bookShelf = bookShelf;
@@ -28,56 +29,45 @@ namespace BookLib
         {
             return bookShelf.Books;
         }
-
-        [Obsolete("Please, use SaveXMLHelp with gui instead!")]
-        public void SaveXML(string path = "BookShelf\\bookShelf1.xml")
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
-            using (var sw = new StreamWriter(path))
-            {
-                xmlSerializer.Serialize(sw, bookShelf);
-            }
-
-        }
-        [Obsolete("Please, use SaveXMLHelp with gui instead!")]
-        public void ReadXML(string path = "BookShelf\\bookShelf1.xml")
-        {
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
-            using (StreamReader sr = new StreamReader(path))
-            {
-                bookShelf = (BookShelf)xmlSerializer.Deserialize(sr);
-            }
-
-        }
-
-        public void SaveXMLHelp()
+               
+        public void SaveWindow()
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog1.Filter = "XML|*.xml|JSON|*.json";
             saveFileDialog1.FilterIndex = 2;
             saveFileDialog1.RestoreDirectory = true;
 
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                this.SaveXML(saveFileDialog1.FileName);    
+                string str = saveFileDialog1.FileName.Substring(saveFileDialog1.FileName.LastIndexOf('.') + 1);
+
+                if (str == "json")
+                    this.SaveJSON(saveFileDialog1.FileName);
+                if (str == "xml")
+                    this.SaveXML(saveFileDialog1.FileName);
             }
         }
-        public void ReadXMLHelp()
+        public void ReadWindow()
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            
+
             openFileDialog1.InitialDirectory = "c:\\";
-            
-            openFileDialog1.Filter = "xml files (*.xml)|*.xml";
+
+            openFileDialog1.Filter = "XML|*.xml|JSON|*.json";
             openFileDialog1.FilterIndex = 2;
             openFileDialog1.RestoreDirectory = true;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {               
+            {
                 try
                 {
-                    this.ReadXML(openFileDialog1.FileName);
+                    string str = openFileDialog1.FileName.Substring(openFileDialog1.FileName.LastIndexOf('.') + 1);
+
+                    if (str == "json")
+                        this.SaveJSON(openFileDialog1.FileName);
+                    if (str == "xml")
+                        this.SaveXML(openFileDialog1.FileName);
                 }
                 catch (Exception ex)
                 {
@@ -85,5 +75,47 @@ namespace BookLib
                 }
             }
         }
+        
+        //--privates
+        private void SaveXML(string path)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
+
+            using (var sw = new StreamWriter(path))
+            {
+                xmlSerializer.Serialize(sw, bookShelf);
+            }
+
+        }
+        private void ReadXML(string path)
+        {   
+            XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
+
+            using (StreamReader sr = new StreamReader(path))
+            {
+                bookShelf = (BookShelf)xmlSerializer.Deserialize(sr);
+            }
+
+        }
+
+        private void SaveJSON(string path)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+
+            using (JsonWriter writer = new JsonTextWriter(new StreamWriter(path)))
+            {
+                serializer.Serialize(writer, bookShelf);
+            }
+        }                    
+        private void ReadJSON(string path)
+        {
+            JsonSerializer serializer = new JsonSerializer();
+                    
+            using (JsonReader reader = new JsonTextReader(new StreamReader(path)))
+            {
+                bookShelf = (BookShelf)serializer.Deserialize(reader);
+            }
+            
+        }       
     }
 }

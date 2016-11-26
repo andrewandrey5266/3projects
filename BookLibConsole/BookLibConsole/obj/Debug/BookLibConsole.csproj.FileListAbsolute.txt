@@ -14,3 +14,5 @@ C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\De
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLibConsole.pdb
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLib.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\BookLib.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLibConsole\bin\Debug\Newtonsoft.Json.xml

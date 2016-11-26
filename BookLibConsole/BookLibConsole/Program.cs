@@ -46,7 +46,7 @@ namespace BookLibConsole
         {
             Console.WriteLine("Would you like to load new book?\n1 - Yes\n2 - No");
             if(int.Parse(Console.ReadLine()) == 1)
-                shelfService.ReadXMLHelp();
+                shelfService.ReadWindow();
 
             DoIteration();       
         }
@@ -63,33 +63,34 @@ namespace BookLibConsole
             {
                 foreach (var c in shelfService.GetBooks())
                     Console.WriteLine("Title: {0}, Authors : {1}", c.Name, string.Join(" ", c.Authors));
-
-                //- make loop
-                DoIteration();               
-                //
+                DoIteration();
             }
             if (response == 2)
             {
                 AddBook();
-
-                //- make loop
                 DoIteration();
-                //
             }
             if (response == 3)
             {
                 Console.WriteLine("Input book name please");
                 string bookName = Console.ReadLine();
                 RemoveBook(bookName);
-
-                //- make loop
                 DoIteration();
-                //
             }
             if (response == 4)
             {
                 EndSession();
             }
+
+           
+        }      
+        private void EndSession()
+        {
+            Console.WriteLine("Would you like to save book?\n1 - Yes\n2 - No");
+            if (int.Parse(Console.ReadLine()) == 1)
+                shelfService.SaveWindow();
+
+            Console.WriteLine("Thx, the progress is saved!");
         }
 
         private void AddBook()
@@ -115,28 +116,21 @@ namespace BookLibConsole
             }
             catch (Exception e)
             {
-                Console.WriteLine("There was an error while processing the book!");
+                Console.WriteLine("There was an error while processing the book!" + e.Message);
             }
         }
         private void RemoveBook(string Name)
         {
-            try {
+            try
+            {
                 shelfService.RemoveBook(shelfService.bookShelf.Books.Find(c => c.Name == Name));
                 Console.WriteLine("The book was successfuly delited");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Book isn't found!" + e.Message);
             }
         }
 
-        private void EndSession()
-        {
-            shelfService.SaveXMLHelp();
-              
-            Console.WriteLine("Thx, the progress is saved!");
-        }
-
-       
     }
 }

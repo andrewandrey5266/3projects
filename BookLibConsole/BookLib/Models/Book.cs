@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
 
 namespace BookLib
 {
@@ -16,13 +12,13 @@ namespace BookLib
         public int Year { get; set; }
 
         public Book() : this("default1", 0, new List<string>(), 2000) { }
+
         public Book(string name, int numOfPages, List<string> authors, int year)
         {
             this.Name = name;
             this.NumOfPages = numOfPages;
             this.Authors = authors;
             this.Year = year;
-        }
-       
+        }       
     }
 }

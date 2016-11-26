@@ -8,12 +8,11 @@ namespace BookLib
 {
     public class BookService
     {
-        private Book book;
+        public Book book { get; set; }
+
         public BookService(Book book)
         {
             this.book = book;
-        }
-
-
+        }        
     }
 }
