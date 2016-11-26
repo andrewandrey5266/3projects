@@ -5,12 +5,12 @@ using System.Text;
 using System.Xml.Serialization;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 namespace BookLib
 {
     public class BookShelfService
     {
-        private BookShelf bookShelf;
-        public BookShelfService() { }
+        public BookShelf bookShelf { get; private set; }
         public BookShelfService(BookShelf bookShelf)
         {
             this.bookShelf = bookShelf;
@@ -18,38 +18,72 @@ namespace BookLib
 
         public void AddBook(Book book)
         {
-
-            bookShelf.books.Add(book);
+            bookShelf.Books.Add(book);
         }
-        public bool Remove(Book book)
+        public bool RemoveBook(Book book)
         {
-            return bookShelf.books.Remove(book);
+            return bookShelf.Books.Remove(book);
         }
         public List<Book> GetBooks()
         {
-            return bookShelf.books;
+            return bookShelf.Books;
         }
 
-        public void SaveXML(string path = "BookShelf", string fileName = "bookShelf1.xml")
+        [Obsolete("Please, use SaveXMLHelp with gui instead!")]
+        public void SaveXML(string path = "BookShelf\\bookShelf1.xml")
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
-            using (var sw = new StreamWriter
-                (Path.Combine(Environment.CurrentDirectory, string.Format(@"{1}\{2}", path, fileName)))
+            using (var sw = new StreamWriter(path))
             {
                 xmlSerializer.Serialize(sw, bookShelf);
             }
 
         }
-
-        public void ReadXML(string path = "BookShelf", string fileName = "bookShelf1.xml")
+        [Obsolete("Please, use SaveXMLHelp with gui instead!")]
+        public void ReadXML(string path = "BookShelf\\bookShelf1.xml")
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(BookShelf));
-            using (StreamReader sr = new StreamReader
-                (string.Format(@"{0}{1}\{2}", Environment.CurrentDirectory, path, fileName)))
+            using (StreamReader sr = new StreamReader(path))
             {
-                bookShelf = (BookShelf) xmlSerializer.Deserialize(sr);
-            }          
+                bookShelf = (BookShelf)xmlSerializer.Deserialize(sr);
+            }
+
+        }
+
+        public void SaveXMLHelp()
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            saveFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.SaveXML(saveFileDialog1.FileName);    
+            }
+        }
+        public void ReadXMLHelp()
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
             
+            openFileDialog1.InitialDirectory = "c:\\";
+            
+            openFileDialog1.Filter = "xml files (*.xml)|*.xml";
+            openFileDialog1.FilterIndex = 2;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {               
+                try
+                {
+                    this.ReadXML(openFileDialog1.FileName);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not read file from disk. Original error: " + ex.Message);
+                }
+            }
         }
     }
 }

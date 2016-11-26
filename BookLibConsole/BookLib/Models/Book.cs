@@ -15,14 +15,13 @@ namespace BookLib
         public List<string> Authors { get; set; }
         public int Year { get; set; }
 
-        public Book() { }
+        public Book() : this("default1", 0, new List<string>(), 2000) { }
         public Book(string name, int numOfPages, List<string> authors, int year)
         {
             this.Name = name;
             this.NumOfPages = numOfPages;
             this.Authors = authors;
             this.Year = year;
-
         }
        
     }

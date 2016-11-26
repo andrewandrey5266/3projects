@@ -8,10 +8,11 @@ namespace BookLib
 {
     public class BookShelf
     {
-        public List<Book> books { get; set; }
-
-        public BookShelf() {
-            books = new List<Book>();
+        public List<Book> Books { get; set; }
+        public string Name { get; set; }
+        public BookShelf()
+        {
+            Books = new List<Book>();
         }
 
     }
