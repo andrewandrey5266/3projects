@@ -8,3 +8,4 @@ C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\Boo
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\BookLib.pdb
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibConsole\BookLib\obj\Debug\BookLib.csprojResolveAssemblyReference.cache

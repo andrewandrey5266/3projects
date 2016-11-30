@@ -1,0 +1,14 @@
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\bin\Debug\BookLibWpf.exe.config
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\App.g.cs
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf_MarkupCompile.cache
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\bin\Debug\BookLibWpf.exe
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\bin\Debug\BookLibWpf.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\MainWindow.g.cs
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf_MarkupCompile.lref
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\MainWindow.baml
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.g.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.Properties.Resources.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.csproj.GenerateResource.Cache
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.exe
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\BookLibWpf.pdb
