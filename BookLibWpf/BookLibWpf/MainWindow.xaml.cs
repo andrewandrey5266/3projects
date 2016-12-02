@@ -22,83 +22,115 @@ namespace BookLibWpf
     /// </summary>
     public partial class MainWindow : Window
     {
-        string connection = ConfigurationManager.ConnectionStrings["Library"].ConnectionString;
-
+        DBManager dbManager = new DBManager();
+        int TempBookId;
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        }        
+        // pure sql
+        private void SelectBook_Click(object sender, RoutedEventArgs e)
         {
-            booksGrid.ItemsSource = SelectAll();
-         
-            
-        }
-
-        private void YesButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-
-        private void NoButton_Click(object sender, RoutedEventArgs e)
-        {
-            InputBox.Visibility = Visibility.Collapsed;
-        }
-
-        private List<Book> SelectAll()
-        {
-            using (SqlConnection sqlConnection = new SqlConnection(connection))
-            {
-                sqlConnection.Open();
-                SqlCommand sqlCommand = new SqlCommand("select * from book", sqlConnection);
-                SqlDataReader sqlReader = sqlCommand.ExecuteReader();
-
-                List<Book> result = new List<Book>();
-
-                if (sqlReader.HasRows)
-                {
-                    while (sqlReader.Read())
-                    {
-                        result.Add(new Book
-                        {
-                            Id = Convert.ToInt32(sqlReader["book_id"]),
-                            Name = sqlReader["name"].ToString(),
-                            Author = sqlReader["author"].ToString(),
-                            NumOfPages = Convert.ToInt32(sqlReader["num_of_pages"]),
-                            Year = Convert.ToInt32(sqlReader["_year"]),
-                        });
-                    }
-                }
-
-                return result;
-            }
-
-        }
-        private void InsertBook(Book book)
-        {
-            using(var sqlConnection = new SqlConnection(connection))
-            {
-                sqlConnection.Open();
-                var sqlCommand = new SqlCommand(string.Format("insert into book(name, author, num_of_pages, _year) values ('{0}','{1}',{2}, {3})",
-                    book.Name, book.Author, book.NumOfPages, book.Year));
-
-                var sqlReader = Convert.ToInt32((decimal)sqlCommand.ExecuteScalar());
-                MessageBox.Show("You book was added with id " + sqlReader);
-               
-            }
-        }
+            booksGrid.ItemsSource = dbManager.SelectAll();
+        }       
 
         private void AddBook_Click(object sender, RoutedEventArgs e)
         {
-            InputBox.Visibility = Visibility.Visible;
+            AddBookBox.Visibility = Visibility.Visible;
+            //null
+            YesButton.Click -= YesButtonUpdateBook_Click;
+            YesButton.Click -= YesButtonAdd_Click;
+            //assign
+            YesButton.Click += YesButtonAdd_Click;
+        }
+
+        private void UpdateBook_Click(object sender, RoutedEventArgs e)
+        {
+            FeatureText.Text = "Book's id";
+            
+            //null
+            YesButton.Click -= YesButtonUpdateBook_Click;
+            YesButton.Click -= YesButtonAdd_Click;
+            //assign
+            YesButton.Click += YesButtonUpdateBook_Click;
+
+
+            Yes1Button.Click -= YesButtonRemove_Click;
+            Yes1Button.Click -= YesButtonUpdateId_Click;
+
+            Yes1Button.Click += YesButtonUpdateId_Click;
+            
+            OneFieldBox.Visibility = Visibility.Visible;
         }
 
         private void RemoveBook_Click(object sender, RoutedEventArgs e)
         {
-            InputBox.Visibility = Visibility.Visible;
-            InputBox.Children[""]
+            FeatureText.Text = "Book's name";
+
+            Yes1Button.Click -= YesButtonRemove_Click;
+            Yes1Button.Click -= YesButtonUpdateId_Click;
+            Yes1Button.Click += YesButtonRemove_Click;
+
+            OneFieldBox.Visibility = Visibility.Visible;
         }
+        
+
+        #region FIELD INPUT
+        private void NoButtonField_Click(object sender, RoutedEventArgs e)
+        {
+            OneFieldBox.Visibility = Visibility.Collapsed;
+        }
+        private void YesButtonRemove_Click(object sender, RoutedEventArgs e)
+        {
+            string bookName = FeatureTextBox.Text;
+            dbManager.RemoveBook(bookName);
+
+            NoButtonField_Click(null, null);
+        }
+
+        private void YesButtonUpdateId_Click(object sender, RoutedEventArgs e)
+        {
+            TempBookId = Convert.ToInt32(FeatureTextBox.Text);
+            AddBookBox.Visibility = Visibility.Visible;
+
+            NoButtonField_Click(null, null);
+        }
+
+        #endregion FIELD INPUT
+
+
+
+
+
+        #region BOOK INPUT
+        private void NoButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddBookBox.Visibility = Visibility.Collapsed;
+        }
+        private void YesButtonAdd_Click(object sender, RoutedEventArgs e)
+        {
+            dbManager.InsertBook(AddBook_GetBook());
+
+            NoButton_Click(null, null);
+        }
+
+        private void YesButtonUpdateBook_Click(object sender, RoutedEventArgs e)
+        {
+            dbManager.UpdateBook(TempBookId, AddBook_GetBook());
+
+            NoButton_Click(null, null);
+        }
+
+        private Book AddBook_GetBook()
+        {
+            return new Book
+            {
+                Name = NameTextBox.Text,
+                Author = AuthorTextBox.Text,
+                NumOfPages = Convert.ToInt32(NumOfPagesTextBox.Text),
+                Year = Convert.ToInt32(YearTextBox.Text)
+            };
+        }
+        #endregion BOOK INPUT
     }
 }
