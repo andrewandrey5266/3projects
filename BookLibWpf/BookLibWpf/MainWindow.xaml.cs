@@ -24,9 +24,12 @@ namespace BookLibWpf
     {
         DBManager dbManager = new DBManager();
         int TempBookId;
+
+        private IProjectsModel model = null;
         public MainWindow()
         {
             InitializeComponent();
+            model = new ProjectsModel();
         }        
         // pure sql
         private void SelectBook_Click(object sender, RoutedEventArgs e)
@@ -74,7 +77,6 @@ namespace BookLibWpf
             OneFieldBox.Visibility = Visibility.Visible;
         }
         
-
         #region FIELD INPUT
         private void NoButtonField_Click(object sender, RoutedEventArgs e)
         {
