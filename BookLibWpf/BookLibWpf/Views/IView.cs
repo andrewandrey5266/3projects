@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
 using BookLibWpf.Models;
-namespace BookLibWpf
+using BookLibWpf.Presenters;
+
+namespace BookLibWpf.Views
 {
-    public class LibraryContext:DbContext
+    public interface IView<T>
     {
-        public DbSet<Book> Books { get; set; }
+         event EventHandler<T> ProcessInput;
     }
 }

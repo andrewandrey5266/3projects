@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace BookLibWpf
+namespace BookLibWpf.Models
 {
+  
     public class Book
     {
         [Key]

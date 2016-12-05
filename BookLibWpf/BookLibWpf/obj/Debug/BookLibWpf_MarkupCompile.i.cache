@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\repository\3projects\BookLibWpf\BookLibWpf\obj\Debug\
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\obj\Debug\
 BookLibWpf
 none
 false
 DEBUG;TRACE
-D:\repository\3projects\BookLibWpf\BookLibWpf\App.xaml
-2462529049
+C:\Users\Dusheba\Documents\GitHub\3projects\BookLibWpf\BookLibWpf\App.xaml
+3-1031667159
 2-1436983050
-22904048690
-18174995822
-MainWindow.xaml;Window1.xaml;
+19-1762808708
+181653706428
+MainWindow.xaml;Views\SubWindow1.xaml;Views\SubWindow2.xaml;
 
 False
 

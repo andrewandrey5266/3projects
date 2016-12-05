@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-namespace BookLibWpf
+
+namespace BookLibWpf.Models
 {
-    public class EFService
+    public class EFService : IService<Book>
     {
         private LibraryContext context;
         public EFService(LibraryContext context) { this.context = context; }
@@ -19,33 +20,32 @@ namespace BookLibWpf
         {
             context.Books.Add(book);
             context.SaveChanges();
-        }
-        public void Delete(string name, string author)
-        {
-            var temp = from c in context.Books.ToList()
-                       where c.Author == author &&
-                       c.Name == name
-                       select c;
-
-            context.Books.RemoveRange(temp);
-            context.SaveChanges();
-
-        }
-        public void Update(string name, string author, Book book)
+        }        
+        public void Update(Book oldItem, Book newItem)
         {
             var temp = from c in context.Books
                        where
-                           c.Name == name &&
-                           c.Author == author
+                           c.Name == oldItem.Name &&
+                           c.Author == oldItem.Author
                        select c;
 
             foreach (var c in temp)
             {
-                c.Name = book.Name;
-                c.Author= book.Author;
+                c.Name = newItem.Name;
+                c.Author = newItem.Author;
             }
             context.SaveChanges();
+                          
         }
+        public void Delete(Book item)
+        {
+            var temp = from c in context.Books
+                       where c.Author == item.Author &&
+                       c.Name == item.Name
+                       select c;
 
+            context.Books.RemoveRange(temp);
+            context.SaveChanges();
+        }
     }
 }

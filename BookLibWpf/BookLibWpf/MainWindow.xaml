@@ -7,6 +7,7 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Book shelf" Height="411.5" Width="1025">
+    
     <Grid Margin="0,0,0,38">
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="47,34,0,0" VerticalAlignment="Top" Height="25" Width="56"/>
         
@@ -15,61 +16,6 @@
         <Button x:Name="addBook" Content="Add Book" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="93" Click="AddBook_Click"/>
         <Button x:Name="removeBook" Content="Remove Book" HorizontalAlignment="Left" Margin="10,66,0,0" VerticalAlignment="Top" Width="93" Click="RemoveBook_Click"/>
         <Button x:Name="updateBook" Content="Update Book" HorizontalAlignment="Left" Margin="10,93,0,0" VerticalAlignment="Top" Width="93" Click="UpdateBook_Click"/>
-
-        <!-- It's important that this is in the end of the XAML as it needs to be on top of everything else! -->
-        <Grid x:Name="AddBookBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.5"/>
-            <Border
-            MinWidth="250"
-            Background="Aqua" 
-            BorderBrush="Black" 
-            BorderThickness="1" 
-            CornerRadius="10,10,10,10" 
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Margin="5" Text="Title:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="NameTextBox"/>
-                    
-                    <TextBlock Margin="5" Text="Author:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="AuthorTextBox"/>
-                    
-                    <TextBlock Margin="5" Text="Number of pages:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="NumOfPagesTextBox"/>
-                    
-                    <TextBlock Margin="5" Text="Year of publication:" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="YearTextBox"/>
-                    
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="YesButton" Margin="5" Content="Submit" Background="{x:Null}" Click="YesButtonAdd_Click"/>
-                        <Button x:Name="NoButton" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButton_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
-
-        <Grid x:Name="OneFieldBox" Visibility="Collapsed">
-            <Grid Background="Black" Opacity="0.5"/>
-            <Border
-            MinWidth="250"
-            Background="Aqua" 
-            BorderBrush="Black" 
-            BorderThickness="1" 
-            CornerRadius="10,10,10,10" 
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center">
-                <StackPanel>
-                    <TextBlock Name="FeatureText" Margin="5" Text="Name" FontWeight="Bold" FontFamily="Cambria" />
-                    <TextBox MinWidth="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="FeatureTextBox"/>                    
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button x:Name="Yes1Button" Margin="5" Content="Submit" Background="{x:Null}" Click="YesButtonRemove_Click"/>
-                        <Button x:Name="No1Button" Margin="5" Content="Cancel" Background="{x:Null}" Click="NoButtonField_Click" />
-                    </StackPanel>
-                </StackPanel>
-            </Border>
-        </Grid>
-
     </Grid>
 
 </Window>

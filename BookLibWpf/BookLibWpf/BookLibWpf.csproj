@@ -81,8 +81,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="Models\IService.cs" />
+    <Compile Include="Models\ProjectEventArgs.cs" />
+    <Compile Include="Presenters\ActorPresenter.cs" />
+    <Compile Include="Presenters\FieldPresenter.cs" />
+    <Compile Include="Views\IView.cs" />
+    <Compile Include="Views\SubWindow1.xaml.cs">
+      <DependentUpon>SubWindow1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubWindow2.xaml.cs">
+      <DependentUpon>SubWindow2.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -92,39 +100,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Book.cs" />
-    <Compile Include="EFService.cs" />
-    <Compile Include="Interfaces\IProjectsModel.cs" />
-    <Compile Include="Interfaces\IProjectsView.cs" />
-    <Compile Include="Library.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Library.xsd</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\EFService.cs" />
     <Compile Include="LibraryContext.cs" />
-    <Compile Include="LibraryDataSet.cs">
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LibraryDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="Views\SubWindow1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SubWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ManageDB.cs" />
-    <Compile Include="Models\ProjectsModel.cs" />
-    <Compile Include="Models\ProjectsView.cs" />
-    <Compile Include="Models\Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -142,28 +134,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Library.xsc">
-      <DependentUpon>Library.xsd</DependentUpon>
-    </None>
-    <None Include="Library.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Library.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Library.xss">
-      <DependentUpon>Library.xsd</DependentUpon>
-    </None>
-    <None Include="LibraryDataSet.xsc">
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LibraryDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LibraryDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LibraryDataSet.xss">
-      <DependentUpon>LibraryDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
