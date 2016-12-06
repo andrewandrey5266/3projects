@@ -36,6 +36,7 @@ namespace BookLibWpf.Presenters
         {
             model.Insert(e.Book);
         }
+
         private void processUpdate_Click(object sender, ProjectEventArgs e)
         {
             model.Update(bookBag, e.Book);

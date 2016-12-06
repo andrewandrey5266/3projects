@@ -13,7 +13,6 @@ namespace BookLibWpf.Presenters
         public IService<Book> model;
         public IView<int> view;
        
-
         public FieldPresenter(IService<Book> model, IView<int> view)
         {
             this.model = model;

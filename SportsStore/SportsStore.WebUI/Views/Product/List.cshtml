@@ -1,0 +1,22 @@
+﻿@model SportsStore.WebUI.Models.ProductsListViewModel
+@using SportsStore.WebUI.HtmlHelpers
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach (var p in Model.Products)
+{
+    Html.RenderPartial("ProductSummary", p);
+
+    /*
+     *  Works the same way as the line above. difference: returns the string of html text,
+     *  instead of just putting the command in the buffer. and it's also works for efficiently
+     * @Html.Partial("ProductSummary", p);
+     * */
+    
+}
+
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))   
+</div>
