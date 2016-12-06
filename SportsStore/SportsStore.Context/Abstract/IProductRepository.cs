@@ -8,5 +8,9 @@ namespace SportsStore.Context
         IQueryable<Product> Products { get; }
 
         IQueryable<Category> Categories { get; }
+
+        IQueryable<UnitCart> UnitCarts { get; }
+
+        IQueryable<Cart> Carts { get; }
     }
 }

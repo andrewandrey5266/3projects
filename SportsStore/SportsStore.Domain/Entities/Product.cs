@@ -20,5 +20,11 @@ namespace SportsStore.Domain.Entities
         public Category category { get; set; }
 
         public int DiscountID { get; set; }
+
+        public ICollection<UnitCart> UnitCarts { get; set; }
+        public Product()
+        {
+            UnitCarts = new List<UnitCart>();
+        }
     }
 }

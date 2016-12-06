@@ -16,6 +16,12 @@ namespace SportsStore.Domain.Entities
         public decimal TotalPrice { get; set; }
 
         public int UserID { get; set; }
-        public int DeliveryID { get; set; }        
+        public int DeliveryID { get; set; }
+
+        public ICollection<UnitCart> UnitCarts { get; set; }
+        public Cart()
+        {
+            UnitCarts = new List<UnitCart>();
+        }
     }
 }

@@ -68,3 +68,5 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\De
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.pdb
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Context.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Context.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Service.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Service.pdb

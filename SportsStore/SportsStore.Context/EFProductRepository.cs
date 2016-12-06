@@ -14,5 +14,15 @@ namespace SportsStore.Context
         {
             get { return context.Categories; }
         }
+        
+        public IQueryable<UnitCart> UnitCarts
+        {
+            get { return context.UnitCarts; }
+        }
+
+        public IQueryable<Cart> Carts
+        {
+            get { return context.Carts; }
+        }
     }
 }
