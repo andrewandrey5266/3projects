@@ -3,11 +3,9 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using Ninject;
 using Moq;
-using SportsStore.Domain.Abstract;
-using SportsStore.Domain.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using SportsStore.Domain.Concrete;
+using SportsStore.Context;
 
 namespace SportsStore.WebUI.Infrastructure
 {

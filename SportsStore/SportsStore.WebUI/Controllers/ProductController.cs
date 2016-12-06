@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SportsStore.Domain.Abstract;
-using SportsStore.Domain.Entities;
+using SportsStore.Context;
 using SportsStore.WebUI.Models;
+using SportsStore.Domain.Entities;
 
 namespace SportsStore.WebUI.Controllers
 {
@@ -30,11 +30,13 @@ namespace SportsStore.WebUI.Controllers
         //    .Skip((page - 1) * PageSize)
         //    .Take(PageSize));
         //}
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category = null, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
             {
                 Products = repository.Products
+                .Where(p => category == null || p.CategoryID == 
+                    repository.Categories.Where(i => i.Name == category).FirstOrDefault().CategoryID)
                 .OrderBy(p => p.ProductID)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
@@ -43,7 +45,8 @@ namespace SportsStore.WebUI.Controllers
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
                     TotalItems = repository.Products.Count()
-                }
+                },
+                CurrentCategory = category
             };
             return View(model);
         }

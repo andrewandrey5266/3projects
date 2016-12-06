@@ -66,3 +66,5 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\En
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Context.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.Context.pdb
