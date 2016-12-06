@@ -15,7 +15,7 @@ namespace SportsStore.Domain.Entities
         public string Description { get; set; }
         public decimal Price { get; set; }
         
-       [ForeignKey("category")]
+        [ForeignKey("category")]
         public int CategoryID { get; set; }
         public Category category { get; set; }
 

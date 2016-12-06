@@ -13,3 +13,4 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.AddCategoryMigration.resources
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.NewMigration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.CartMigration.resources

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{13C5ED5D-DA03-4DD3-A4F1-501B4C27D0D5}</ProjectGuid>
+    <ProjectGuid>{A2AF040B-0A47-4E57-B27B-B181E6CEE35B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SportsStore.Context</RootNamespace>
-    <AssemblyName>SportsStore.Context</AssemblyName>
+    <RootNamespace>SportsStore.Service</RootNamespace>
+    <AssemblyName>SportsStore.Service</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,16 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,45 +39,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IProductRepository.cs" />
-    <Compile Include="EFDbContext.cs" />
-    <Compile Include="EFProductRepository.cs" />
-    <Compile Include="Migrations\201612061520383_AddCategoryMigration.cs" />
-    <Compile Include="Migrations\201612061520383_AddCategoryMigration.Designer.cs">
-      <DependentUpon>201612061520383_AddCategoryMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612061554208_NewMigration.cs" />
-    <Compile Include="Migrations\201612061554208_NewMigration.Designer.cs">
-      <DependentUpon>201612061554208_NewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612061951554_CartMigration.cs" />
-    <Compile Include="Migrations\201612061951554_CartMigration.Designer.cs">
-      <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CartService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\SportsStore.Context\SportsStore.Context.csproj">
+      <Project>{13c5ed5d-da03-4dd3-a4f1-501b4c27d0d5}</Project>
+      <Name>SportsStore.Context</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SportsStore.Domain\SportsStore.Domain.csproj">
       <Project>{63263ea7-e84b-4bec-ac99-0f141a81a8bf}</Project>
       <Name>SportsStore.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612061520383_AddCategoryMigration.resx">
-      <DependentUpon>201612061520383_AddCategoryMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612061554208_NewMigration.resx">
-      <DependentUpon>201612061554208_NewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612061951554_CartMigration.resx">
-      <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

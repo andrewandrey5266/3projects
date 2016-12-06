@@ -44,7 +44,9 @@ namespace SportsStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = repository.Products.Count()
+                    TotalItems = category == null? repository.Products.Count() :
+                    repository.Products.Where(i => i.CategoryID == 
+                        repository.Categories.Where(c => c.Name == category).FirstOrDefault().CategoryID).Count()
                 },
                 CurrentCategory = category
             };
