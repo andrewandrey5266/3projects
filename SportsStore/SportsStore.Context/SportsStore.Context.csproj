@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,7 +64,16 @@
     <Compile Include="Migrations\201612061951554_CartMigration.Designer.cs">
       <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612070814432_DateTimeMigration.cs" />
+    <Compile Include="Migrations\201612070814432_DateTimeMigration.Designer.cs">
+      <DependentUpon>201612070814432_DateTimeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612070827168_DateTimeMigration1.cs" />
+    <Compile Include="Migrations\201612070827168_DateTimeMigration1.Designer.cs">
+      <DependentUpon>201612070827168_DateTimeMigration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\SqlServerMigrationGeneratorField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612061951554_CartMigration.resx">
       <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612070814432_DateTimeMigration.resx">
+      <DependentUpon>201612070814432_DateTimeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612070827168_DateTimeMigration1.resx">
+      <DependentUpon>201612070827168_DateTimeMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

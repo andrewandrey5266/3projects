@@ -1,7 +1,8 @@
 ﻿@model SportsStore.WebUI.Models.CartIndexViewModel
 @using SportsStore.Service.Services;
+
 @{
-ViewBag.Title = "Sports Store: Your Cart";
+ViewBag.Title = "Cold Steel Store: Your Cart";
 }
 <h2>Your cart</h2>
 <table width="90%" align="center">
@@ -17,9 +18,16 @@ ViewBag.Title = "Sports Store: Your Cart";
         @foreach (var line in Model.Cart.UnitCarts) {
             <tr>
                 <td align="center">@line.Quantity</td>
-                <td align="left">@line.ProductID</td>
-                @*<td align="right">@line.product.Price.ToString("c")</td>
-                <td align="right">@((line.Quantity * line.product.Price).ToString("c"))</td>*@
+                <td align="left">@line.product.Name</td>
+                <td align="right">@line.product.Price.ToString("c")</td>
+                <td align="right">@((line.Quantity * line.product.Price).ToString("c"))</td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart")) {
+                        @Html.Hidden("ProductId", line.product.ProductID)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="actionButtons" type="submit" value="Remove" />
+}
+                </td>
             </tr>
 }
     </tbody>
@@ -27,7 +35,7 @@ ViewBag.Title = "Sports Store: Your Cart";
         <tr>
             <td colspan="3" align="right">Total:</td>
             <td align="right">
-                @Model.Cart.ComputeTotalValue().ToString("c")
+                @ViewBag.TotalPrice                
             </td>
         </tr>
     </tfoot>

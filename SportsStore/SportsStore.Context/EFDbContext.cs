@@ -31,6 +31,10 @@ namespace SportsStore.Context
             modelBuilder.Entity<UnitCart>()
                 .HasRequired<Product>(s => s.product)
                 .WithMany(s => s.UnitCarts);
+
+            modelBuilder.Entity<Cart>()
+                .Property(p => p.OrderDate)
+                .HasColumnName("datetime2");
         }
     }
 }

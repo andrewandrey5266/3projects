@@ -12,6 +12,8 @@ namespace SportsStore.Domain.Entities
         [Key]
         public int CartID { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
         public decimal TotalPrice { get; set; }
 

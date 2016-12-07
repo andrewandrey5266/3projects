@@ -24,5 +24,20 @@ namespace SportsStore.Context
         {
             get { return context.Carts; }
         }
+
+        public void SaveCart(Cart cart)
+        {
+            context.Carts.Add(cart);
+            context.SaveChanges();
+        }
+        public void SaveUnitCart(UnitCart unitCart)
+        {
+            if (context.UnitCarts
+                .Where(i => i.CartID == unitCart.CartID && i.ProductID == unitCart.ProductID)
+                .Select(x=>x)
+                .Count() == 0)
+            context.UnitCarts.Add(unitCart);
+            context.SaveChanges();
+        }
     }
 }
