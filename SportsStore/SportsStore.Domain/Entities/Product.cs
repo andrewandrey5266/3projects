@@ -1,30 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-namespace SportsStore.Domain.Entities
+﻿namespace SportsStore.Domain.Entities
 {
-    public class Product
+    public class Product : IdEntity
     {
-        [Key]
-        public int ProductID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         
-        [ForeignKey("category")]
-        public int CategoryID { get; set; }
-        public Category category { get; set; }
+        public virtual Category Category { get; set; }
 
-        public int DiscountID { get; set; }
-
-        public ICollection<UnitCart> UnitCarts { get; set; }
-        public Product()
-        {
-            UnitCarts = new List<UnitCart>();
-        }
+        public int DiscountID { get; set; }       // change later to Discount discount
     }
 }

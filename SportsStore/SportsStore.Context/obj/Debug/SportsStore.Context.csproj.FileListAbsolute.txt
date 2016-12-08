@@ -10,9 +10,3 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\bin\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.AddCategoryMigration.resources
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.NewMigration.resources
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.CartMigration.resources
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DateTimeMigration.resources
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DateTimeMigration1.resources

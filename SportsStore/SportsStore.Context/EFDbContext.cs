@@ -8,7 +8,7 @@ using SportsStore.Domain.Entities;
 
 namespace SportsStore.Context
 {
-    class EFDbContext:DbContext
+    public class EFDbContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
 
@@ -16,25 +16,6 @@ namespace SportsStore.Context
 
         public DbSet<Cart> Carts { get; set; }
 
-        public DbSet<UnitCart> UnitCarts { get; set; }
-
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Product>()
-                .HasRequired<Category>(s => s.category)
-                .WithMany(s => s.Products);
-
-            modelBuilder.Entity<UnitCart>()
-                .HasRequired<Cart>(s => s.cart)
-                .WithMany(s => s.UnitCarts);
-
-            modelBuilder.Entity<UnitCart>()
-                .HasRequired<Product>(s => s.product)
-                .WithMany(s => s.UnitCarts);
-
-            modelBuilder.Entity<Cart>()
-                .Property(p => p.OrderDate)
-                .HasColumnName("datetime2");
-        }
+        public DbSet<UnitCart> UnitCarts { get; set; }       
     }
 }

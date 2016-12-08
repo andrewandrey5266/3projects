@@ -9,59 +9,55 @@ namespace SportsStore.WebUI.Controllers
 {
     public class CartController : Controller
     {
-        private IProductRepository repository;
-        public CartController(IProductRepository repo)
-        {
-            repository = repo;
-        }
-
-        public ViewResult Index(Cart cart, string returnUrl)
+        private EFDbContext repository = new EFDbContext();
+        private CartService cartService = new CartService();
+        
+        public ViewResult Index(CartViewModel cart, string returnUrl)
         {
             ViewBag.TotalPrice = new CartService().ComputeTotalValue((Cart)Session["Cart"]);
             return View(new CartIndexViewModel
             {
-                Cart = cart,
+                CartVM = cart,
                 ReturnUrl = returnUrl
             });
         }
 
-        public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
+        public RedirectToRouteResult AddToCart(CartViewModel cart, string productId, string returnUrl)
         {
             Product product = repository.Products
-            .FirstOrDefault(p => p.ProductID == productId);
+            .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
-              new CartService().AddItem(cart,product, 1);
+              cartService.AddItem(cart,product, 1);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
-        public RedirectToRouteResult RemoveFromCart(Cart cart, int productId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(CartViewModel cart, string productId, string returnUrl)
         {
             Product product = repository.Products
-            .FirstOrDefault(p => p.ProductID == productId);
+            .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
-                new CartService().RemoveLine(cart, product);
+                cartService.RemoveLine(cart, product);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public PartialViewResult Summary(Cart cart)
+        public PartialViewResult Summary(CartViewModel cart)
         {
             ViewBag.TotalPrice = new CartService().ComputeTotalValue((Cart)Session["Cart"]);            
             return PartialView(cart);
         }
 
-        private Cart GetCart()
+        private CartViewModel GetCart()
         {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
+            CartViewModel cartVM = (CartViewModel)Session["Cart"];
+            if (cartVM == null)
             {
-                cart = new Cart() { OrderDate = System.DateTime.Now };
-                Session["Cart"] = cart;
-                new CartService().AddCartToDB(cart);
+                cartVM = new CartViewModel { cart = cartService.GetNewCart() };
+                Session["Cart"] = cartVM;         
             }
-            return cart;
+            return cartVM;
         }
 
     }

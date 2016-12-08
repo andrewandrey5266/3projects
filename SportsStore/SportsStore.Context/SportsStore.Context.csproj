@@ -49,31 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="EFDbContext.cs" />
-    <Compile Include="EFProductRepository.cs" />
-    <Compile Include="Migrations\201612061520383_AddCategoryMigration.cs" />
-    <Compile Include="Migrations\201612061520383_AddCategoryMigration.Designer.cs">
-      <DependentUpon>201612061520383_AddCategoryMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612061554208_NewMigration.cs" />
-    <Compile Include="Migrations\201612061554208_NewMigration.Designer.cs">
-      <DependentUpon>201612061554208_NewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612061951554_CartMigration.cs" />
-    <Compile Include="Migrations\201612061951554_CartMigration.Designer.cs">
-      <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612070814432_DateTimeMigration.cs" />
-    <Compile Include="Migrations\201612070814432_DateTimeMigration.Designer.cs">
-      <DependentUpon>201612070814432_DateTimeMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612070827168_DateTimeMigration1.cs" />
-    <Compile Include="Migrations\201612070827168_DateTimeMigration1.Designer.cs">
-      <DependentUpon>201612070827168_DateTimeMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Migrations\SqlServerMigrationGeneratorField.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,23 +61,6 @@
       <Project>{63263ea7-e84b-4bec-ac99-0f141a81a8bf}</Project>
       <Name>SportsStore.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612061520383_AddCategoryMigration.resx">
-      <DependentUpon>201612061520383_AddCategoryMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612061554208_NewMigration.resx">
-      <DependentUpon>201612061554208_NewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612061951554_CartMigration.resx">
-      <DependentUpon>201612061951554_CartMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612070814432_DateTimeMigration.resx">
-      <DependentUpon>201612070814432_DateTimeMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612070827168_DateTimeMigration1.resx">
-      <DependentUpon>201612070827168_DateTimeMigration1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

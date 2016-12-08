@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using SportsStore.Context;
 using SportsStore.Domain.Entities;
+using SportsStore.Context;
+using SportsStore.Service.Services;
+using SportsStore.WebUI.Models;
+
 namespace SportsStore.WebUI.Controllers
 {
     public class NavController : Controller
     {
-        private IProductRepository repository;
-        public NavController(IProductRepository repo)
-        {
-            repository = repo;
-        }
+        private EFDbContext repository = new EFDbContext();
+
         public PartialViewResult Menu(string category = null)
         {
             ViewBag.SelectedCategory = category;

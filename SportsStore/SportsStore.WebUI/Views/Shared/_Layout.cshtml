@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
+    <link href="~/Scripts/bootstrap.min.js" type="text/javascript" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" type="text/css"  rel="stylesheet">
 </head>
 <body>
-    <div id="header">
-        @{Html.RenderAction("Summary", "Cart");}
-        <div class="title">COLD STEEL STORE</div>
-    </div>
-    <div id="categories">
-        @{ Html.RenderAction("Menu", "Nav"); }       
-    </div>
-    <div id="content">
-        @RenderBody()
-    </div>
+    <nav class="navbar navbar-default">
+     @{Html.RenderAction("Summary", "Cart");}
+        <div class="title">
+            <h2>COLD STEEL STORE</h2>
+        </div>
+ 
+    @{ Html.RenderAction("Menu", "Nav"); }       
+  </nav>
+      @RenderBody()
+  
 </body>
 </html>

@@ -1,18 +1,38 @@
 ﻿@model IEnumerable<string>
 
-@Html.ActionLink("Home", "List", "Product")
-@foreach (var link in Model)
-{
-    @Html.RouteLink(link.ToString(), new
-        {
-            controller = "Product",
-            action = "List",
-            category = link,
-            page = 1
-        },
-        new
-        {
-            @class = link == ViewBag.SelectedCategory ? "selected" : null
-        });
+<div class="container-fluid">
+    <div class="raw">
+        <div class="col-md-2">
+            <h3>@Html.ActionLink("Home", "List", "Product")</h3>
+        </div>
+        <div class="col-md-10">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">         
+        
+            @foreach(var link in Model)
+            {
+                    <h4>
+                        @Html.RouteLink(link.ToString(), new
+                    {
+                        controller = "Product",
+                        action = "List",
+                        category = link,
+                        page = 1
+                    },
+                    new
+                    {
+                        @class = link == ViewBag.SelectedCategory ? "selected" : null
+                    })
+                    </h4>
 
-}
+            }
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+

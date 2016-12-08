@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SportsStore.Service.Interfaces
 {
-    interface IService
+    interface ICartService
     {
     }
 }
