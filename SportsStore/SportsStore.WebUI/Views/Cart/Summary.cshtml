@@ -1,13 +1,11 @@
-﻿@model SportsStore.Domain.Entities.Cart
-
-@*<div id="cart">
+﻿
+<div id="cart">
     <span class="caption">
         <b>Your cart:</b>
-        @Model.UnitCarts.Sum(x => x.Quantity) item(s),
-        @{
-              @ViewBag.TotalPrice 
-          }       
+        @ViewBag.NumOfProducts item(s),
+        @ViewBag.TotalPrice 
+              
     </span>
     @Html.ActionLink("Checkout", "Index", "Cart", new { returnUrl =
 Request.Url.PathAndQuery }, null)
-</div>*@
+</div>

@@ -9,3 +9,8 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.xml
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Service.dll.config
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\SportsStore.ViewModel.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.SqlServer.xml

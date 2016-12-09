@@ -6,7 +6,8 @@ using Moq;
 using System.Collections.Generic;
 using System.Linq;
 using SportsStore.Context;
-
+using SportsStore.Service.Interfaces;
+using SportsStore.Service.Services;
 namespace SportsStore.WebUI.Infrastructure
 {
     // реализация пользовательской фабрики контроллеров,
@@ -44,6 +45,8 @@ namespace SportsStore.WebUI.Infrastructure
 
             //for services
             //ninjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
+            ninjectKernel.Bind<IUnitCartService>().To<UnitCartService>();
+            ninjectKernel.Bind<ICartService>().To<CartService>();
 
         }
     }

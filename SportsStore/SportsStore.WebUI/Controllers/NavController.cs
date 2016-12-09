@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using SportsStore.Domain.Entities;
 using SportsStore.Context;
 using SportsStore.Service.Services;
-using SportsStore.WebUI.Models;
+
 
 namespace SportsStore.WebUI.Controllers
 {

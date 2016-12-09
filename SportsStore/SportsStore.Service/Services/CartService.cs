@@ -3,35 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SportsStore.ViewModel.Models;
 using SportsStore.Domain.Entities;
 using SportsStore.Context;
+using SportsStore.Service.Interfaces;
+using System.Data.Linq;
 using System.Data.Entity;
-using SportsStore.W
 namespace SportsStore.Service.Services
 {
-    public class CartService
+    public class CartService:ICartService
     {
         public EFDbContext context = new EFDbContext();
-  
-        public void AddCartToDB(Cart cart)
+         
+        public decimal ComputeTotalValue(CartViewModel cartVM)
         {
-            //context.Carts.Add(cart);
-        }
-        public void AddItem(CartViewModel cart,Product product, int quantity)//itemveiwmodul
-        {
-            
-        }
-        public void RemoveLine(Cart cart, Product product)
-        {
-           
+            return context.UnitCarts
+                .Where(i => i.Cart.Id == cartVM.Cart.Id)
+                .Select(i => i.Product.Price * i.Quantity)
+                .DefaultIfEmpty()
+                .Sum();          
         }
 
-        public decimal ComputeTotalValue(Cart cart)
+        public int GetProductQuantity(CartViewModel cartVM)
         {
-            return 0;
-                //context.UnitCarts
-                //.Where(i => i.Cart.Id == cart.Id)
-                //.Sum(i => i.product.Price * i.Quantity);
+            return context.UnitCarts
+                .Where(i => i.Cart.Id == cartVM.Cart.Id)
+                .Count();
         }
 
         public Cart GetNewCart()
@@ -39,6 +36,7 @@ namespace SportsStore.Service.Services
             Cart cart = new Cart { OrderDate = DateTime.Now };
 
             context.Carts.Add(cart);
+            context.SaveChanges();
 
             return cart;
         }

@@ -278,12 +278,19 @@
       <Project>{a2af040b-0a47-4e57-b27b-b181e6cee35b}</Project>
       <Name>SportsStore.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SportsStore.ViewModel\SportsStore.ViewModel.csproj">
+      <Project>{30c00351-6249-4ed8-b11c-1d5953de463f}</Project>
+      <Name>SportsStore.ViewModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

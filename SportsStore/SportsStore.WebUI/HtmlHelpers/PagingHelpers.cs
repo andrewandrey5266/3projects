@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Web.Mvc;
-using SportsStore.WebUI.Models;
+using SportsStore.ViewModel.Models;
 namespace SportsStore.WebUI.HtmlHelpers
 {
     public static class PagingHelpers

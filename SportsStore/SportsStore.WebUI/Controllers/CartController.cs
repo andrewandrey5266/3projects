@@ -2,22 +2,32 @@
 using System.Web.Mvc;
 using SportsStore.Domain.Entities;
 using SportsStore.Context;
+using SportsStore.Service.Interfaces;
+using SportsStore.ViewModel.Models;
 using SportsStore.Service.Services;
-using SportsStore.WebUI.Models;
 
 namespace SportsStore.WebUI.Controllers
 {
     public class CartController : Controller
     {
-        private EFDbContext repository = new EFDbContext();
-        private CartService cartService = new CartService();
+        private EFDbContext repository;
+        private ICartService cartService;
+        private IUnitCartService unitCartServ;
         
+        public CartController(IUnitCartService unitCartServ, ICartService cartServ)
+        {
+            repository = new EFDbContext();
+            this.unitCartServ = unitCartServ;
+            this.cartService = cartServ;
+
+        }
+
         public ViewResult Index(CartViewModel cart, string returnUrl)
         {
-            ViewBag.TotalPrice = new CartService().ComputeTotalValue((Cart)Session["Cart"]);
+            ViewBag.TotalPrice = cartService.ComputeTotalValue(cart);
             return View(new CartIndexViewModel
             {
-                CartVM = cart,
+                Cart = cart.Cart,
                 ReturnUrl = returnUrl
             });
         }
@@ -28,7 +38,7 @@ namespace SportsStore.WebUI.Controllers
             .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
-              cartService.AddItem(cart,product, 1);
+               unitCartServ.AddItem(cart);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
@@ -38,15 +48,18 @@ namespace SportsStore.WebUI.Controllers
             .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
-                cartService.RemoveLine(cart, product);
+                unitCartServ.RemoveItem(cart);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public PartialViewResult Summary(CartViewModel cart)
+        public PartialViewResult Summary(CartViewModel cartVM)
         {
-            ViewBag.TotalPrice = new CartService().ComputeTotalValue((Cart)Session["Cart"]);            
-            return PartialView(cart);
+            if (cartVM.Cart == null) 
+                cartVM = GetCart();
+            ViewBag.TotalPrice = cartService.ComputeTotalValue(cartVM);
+            ViewBag.NumOfProducs = cartService.GetProductQuantity(cartVM);
+            return PartialView(cartVM);
         }
 
         private CartViewModel GetCart()
@@ -54,7 +67,7 @@ namespace SportsStore.WebUI.Controllers
             CartViewModel cartVM = (CartViewModel)Session["Cart"];
             if (cartVM == null)
             {
-                cartVM = new CartViewModel { cart = cartService.GetNewCart() };
+                cartVM = new CartViewModel { Cart = cartService.GetNewCart() };
                 Session["Cart"] = cartVM;         
             }
             return cartVM;

@@ -70,3 +70,5 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\Sy
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\System.Web.WebPages.Razor.xml
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\obj\Debug\SportsStore.WebUI.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.ViewModel.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.WebUI\bin\SportsStore.ViewModel.pdb

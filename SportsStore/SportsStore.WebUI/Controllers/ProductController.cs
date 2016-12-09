@@ -6,17 +6,18 @@ using System.Web.Mvc;
 using SportsStore.Domain.Entities;
 using SportsStore.Context;
 using SportsStore.Service.Services;
-using SportsStore.WebUI.Models;
+using SportsStore.ViewModel.Models;
+using SportsStore.Service.Interfaces;
 
 namespace SportsStore.WebUI.Controllers
 {
     public class ProductController : Controller
     {
         private EFDbContext repository = new EFDbContext();
-        private ProductService cartService = new ProductService();
-        
+        private ProductService  productService = new ProductService();
+  
         public int PageSize = 3;
-               
+
         public ViewResult List(string category = null, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel

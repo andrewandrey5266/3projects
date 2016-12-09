@@ -3,7 +3,8 @@ namespace SportsStore.ViewModel.Models
 {
     public class CartViewModel
     {
-        public Cart cart;
+        public Cart Cart;
         public string UserId;
+        public string ProductId;// for product to be added
     }
 }

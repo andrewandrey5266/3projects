@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using SportsStore.ViewModel.Models;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,7 +12,7 @@
 </head>
 <body>
     <nav class="navbar navbar-default">
-     @{Html.RenderAction("Summary", "Cart");}
+     @{Html.RenderAction("Summary", "Cart", Session["Cart"]);}
         <div class="title">
             <h2>COLD STEEL STORE</h2>
         </div>
