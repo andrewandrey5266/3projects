@@ -22,18 +22,12 @@ namespace SportsStore.WebUI.Controllers
         {
             ProductsListViewModel model = new ProductsListViewModel
             {
-                Products = repository.Products
-                .Where(p => category == null || p.Category.Name == category)
-                .OrderBy(p => p.Id)
-                .Skip((page - 1) * PageSize)
-                .Take(PageSize),
+                Products = productService.GetProduct(category, PageSize, page),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = category == null? repository.Products.Count():3
-                    //category == null? repository.Products.Count() :                   
-                    //    repository.Categories.Where(c => c.Name == category).Select(s => s.Products).Count()
+                    TotalItems = category == null ? repository.Products.Count() : 3
                 },
                 CurrentCategory = category
             };

@@ -4,7 +4,7 @@
     <h3>@Model.Name</h3>
     @Model.Description
 
-    @using (Html.BeginForm("AddToCart", "Cart")){
+    @using (Html.BeginForm("AddToCart", "Cart")){        
         @Html.HiddenFor(x => x.Id)
         @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
         <input type="submit" value="+ Add to cart"/> 

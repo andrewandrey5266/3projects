@@ -34,16 +34,18 @@ namespace SportsStore.WebUI.Controllers
 
         public RedirectToRouteResult AddToCart(CartViewModel cart, string productId, string returnUrl)
         {
+            cart = GetCart();
             Product product = repository.Products
             .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
                unitCartServ.AddItem(cart);
             }
-            return RedirectToAction("Index", new { returnUrl });
+            return RedirectToAction("Index", new { cart, returnUrl });
         }
         public RedirectToRouteResult RemoveFromCart(CartViewModel cart, string productId, string returnUrl)
         {
+            cart = GetCart();
             Product product = repository.Products
             .FirstOrDefault(p => p.Id == productId);
             if (product != null)
