@@ -12,8 +12,8 @@ namespace SportsStore.Service.Interfaces
     {
        void AddItem(CartViewModel cartProductVM);    
 
-       void RemoveItem(CartViewModel cartProductVM);   
+       void RemoveItem(CartViewModel cartProductVM);
 
-      
+       List<UnitCart> SelectUnitCarts(CartViewModel cartProductVM);
     }
 }

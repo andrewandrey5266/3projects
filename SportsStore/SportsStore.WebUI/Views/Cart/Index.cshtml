@@ -1,5 +1,5 @@
-﻿@model SportsStore.WebUI.Models.CartIndexViewModel
-@using SportsStore.Service.Services;
+﻿@model SportsStore.ViewModel.Models.CartViewModel
+
 
 @{
 ViewBag.Title = "Cold Steel Store: Your Cart";
@@ -15,15 +15,15 @@ ViewBag.Title = "Cold Steel Store: Your Cart";
         </tr>
     </thead>
     <tbody>
-        @foreach (var line in Model.Cart.UnitCarts) {
+        @foreach (var line in Model.UnitCarts) {
             <tr>
                 <td align="center">@line.Quantity</td>
-                <td align="left">@line.product.Name</td>
-                <td align="right">@line.product.Price.ToString("c")</td>
-                <td align="right">@((line.Quantity * line.product.Price).ToString("c"))</td>
+                <td align="left">@line.Product.Name</td>
+                <td align="right">@line.Product.Price.ToString("c")</td>
+                <td align="right">@((line.Quantity * line.Product.Price).ToString("c"))</td>
                 <td>
                     @using (Html.BeginForm("RemoveFromCart", "Cart")) {
-                        @Html.Hidden("ProductId", line.product.ProductID)
+                        @Html.Hidden("Id", line.Product.Id)
                         @Html.HiddenFor(x => x.ReturnUrl)
                         <input class="actionButtons" type="submit" value="Remove" />
 }

@@ -5,3 +5,10 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\bi
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.Domain.pdb
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.pdb
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.ViewModel.dll
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.ViewModel.pdb
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.Domain.dll
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.Domain.pdb
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.csprojResolveAssemblyReference.cache
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.dll
+D:\repository\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.pdb

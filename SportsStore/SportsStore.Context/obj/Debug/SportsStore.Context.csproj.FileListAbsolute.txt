@@ -10,3 +10,15 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\bin\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.dll.config
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.dll
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.pdb
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.dll
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.SqlServer.dll
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Domain.dll
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Domain.pdb
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.xml
+D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.SqlServer.xml
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
