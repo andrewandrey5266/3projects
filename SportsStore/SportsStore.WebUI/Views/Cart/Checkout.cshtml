@@ -1,0 +1,21 @@
+﻿@model SportsStore.ViewModel.Models.DeliveryViewModel
+
+@{
+    ViewBag.Title = "Checkout";
+}
+<div align ="center">
+    <h2>Check out now</h2>
+    Please enter your details, and we'll ship your goods right away!
+    @using (Html.BeginForm())
+    {    
+        @Html.ValidationSummary()
+        <h3>Address</h3>   
+        <div>Country: @Html.EditorFor(x => x.Country)</div>
+        <div>City: @Html.EditorFor(x => x.City)</div>
+        <div>Local post office or store: @Html.EditorFor(x => x.LocalDepartment)</div><br /><br /><br />
+
+        <p align="center">
+            <input class="actionButtons" type="submit" value="Complete order" />
+        </p>
+    }
+</div>

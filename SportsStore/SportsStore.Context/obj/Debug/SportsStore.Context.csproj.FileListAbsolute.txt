@@ -22,3 +22,6 @@ D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramewor
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.InitialCreate.resources
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DeliveryMigration.resources

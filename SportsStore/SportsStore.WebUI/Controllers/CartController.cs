@@ -22,10 +22,18 @@ namespace SportsStore.WebUI.Controllers
 
         }
 
+        public PartialViewResult Summary(CartViewModel cartVM)
+        {
+            if (cartVM.Cart == null)
+                cartVM = GetCart();
+            ViewBag.TotalPrice = cartService.ComputeTotalValue(cartVM);
+            ViewBag.NumOfProducs = cartService.GetProductQuantity(cartVM);
+            return PartialView(cartVM);
+        }
+
         public ViewResult Index(CartViewModel cart, string returnUrl)
         {
-            cart = GetCart();
-            ViewBag.TotalPrice = cartService.ComputeTotalValue(cart);
+           ViewBag.TotalPrice = cartService.ComputeTotalValue(cart);
 
 
             return View(new CartViewModel
@@ -35,10 +43,8 @@ namespace SportsStore.WebUI.Controllers
                 UnitCarts = unitCartServ.SelectUnitCarts(cart)
             });
         }
-
         public RedirectToRouteResult AddToCart(CartViewModel cart, string Id, string returnUrl)
         {
-            cart = GetCart();
             cart.ProductId = Id;
             ///
             Product product = repository.Products
@@ -51,7 +57,6 @@ namespace SportsStore.WebUI.Controllers
         }
         public RedirectToRouteResult RemoveFromCart(CartViewModel cart, string Id, string returnUrl)
         {
-            cart = GetCart();
             cart.ProductId = Id;
 ///
             Product product = repository.Products
@@ -63,15 +68,32 @@ namespace SportsStore.WebUI.Controllers
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public PartialViewResult Summary(CartViewModel cartVM)
+
+        public ViewResult Checkout()
         {
-            if (cartVM.Cart == null) 
-                cartVM = GetCart();
-            ViewBag.TotalPrice = cartService.ComputeTotalValue(cartVM);
-            ViewBag.NumOfProducs = cartService.GetProductQuantity(cartVM);
-            return PartialView(cartVM);
+            return View(new DeliveryViewModel());
         }
 
+        [HttpPatch]
+        public ViewResult Checkout(CartViewModel cart, DeliveryViewModel shippingDetails)
+        {
+      
+            if (cartService.GetProductQuantity(cart) == 0)
+            {
+                ModelState.AddModelError("", "Sorry, your cart is empty!");
+            }
+            if (ModelState.IsValid)
+            {
+              //  orderProcessor.ProcessOrder(cart, shippingDetails);
+                ///cart.Clear();
+                return View("Completed");
+            }
+            else
+            {
+                return View(shippingDetails);
+            }
+        }
+        
         private CartViewModel GetCart()
         {
             CartViewModel cartVM = (CartViewModel)Session["Cart"];

@@ -1,14 +1,10 @@
 ﻿using SportsStore.WebUI.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using SportsStore.Domain.Entities;
 using SportsStore.WebUI.Binder;
+using SportsStore.ViewModel.Models;
 namespace SportsStore.WebUI
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -30,7 +26,7 @@ namespace SportsStore.WebUI
 
             ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 
-            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
+            ModelBinders.Binders.Add(typeof(CartViewModel), new CartModelBinder());
 
         }
     }

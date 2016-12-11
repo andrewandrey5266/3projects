@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using SportsStore.Domain.Entities;
+using SportsStore.ViewModel.Models;
+using SportsStore.Service.Services;
 namespace SportsStore.WebUI.Binder
 {
     public class CartModelBinder : IModelBinder
     {
         private const string sessionKey = "Cart";
+        private CartService cartServ= new CartService();
         public object BindModel(ControllerContext controllerContext, ModelBindingContext
         bindingContext)
         {
             // get the Cart from the session
-            Cart cart = (Cart)controllerContext.HttpContext.Session[sessionKey];
+            CartViewModel cart = (CartViewModel)controllerContext.HttpContext.Session[sessionKey];
 
             // create the Cart if there wasn't one in the session data
             if (cart == null)
             {
-                cart = new Cart();
+                cart = new CartViewModel() { Cart = cartServ.GetNewCart() };
                 controllerContext.HttpContext.Session[sessionKey] = cart;
             }
             // return the cart
