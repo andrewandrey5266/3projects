@@ -9,5 +9,10 @@ namespace SportsStore.ViewModel.Models
         public string ProductId;// for product to be added
         public string ReturnUrl;
         public ICollection<UnitCart> UnitCarts;
+
+        public void Clear()
+        {
+            
+        }
     }
 }

@@ -13,8 +13,8 @@
 <body>
     <nav class="navbar navbar-default">
      @{Html.RenderAction("Summary", "Cart", Session["Cart"]);}
-        <div class="title">
-            <h2>COLD STEEL STORE</h2>
+        <div class="title">           
+            <h2> @Html.ActionLink("COLD STEEL STORE", "List", "Product")</h2>
         </div>
  
     @{ Html.RenderAction("Menu", "Nav"); }       

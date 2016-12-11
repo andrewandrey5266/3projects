@@ -74,7 +74,7 @@ namespace SportsStore.WebUI.Controllers
             return View(new DeliveryViewModel());
         }
 
-        [HttpPatch]
+        [HttpPost]
         public ViewResult Checkout(CartViewModel cart, DeliveryViewModel shippingDetails)
         {
       
@@ -85,12 +85,12 @@ namespace SportsStore.WebUI.Controllers
             if (ModelState.IsValid)
             {
               //  orderProcessor.ProcessOrder(cart, shippingDetails);
-                ///cart.Clear();
+                Session["Cart"] = null;
                 return View("Completed");
             }
             else
             {
-                return View(shippingDetails);
+                return View(new DeliveryViewModel());
             }
         }
         

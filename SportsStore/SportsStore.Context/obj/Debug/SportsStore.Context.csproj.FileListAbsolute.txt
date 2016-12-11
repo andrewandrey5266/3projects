@@ -20,8 +20,8 @@ D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Do
 D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.xml
 D:\repository\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.SqlServer.xml
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.InitialCreate.resources
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DeliveryMigration.resources
+D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
-D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.InitialCreate.resources
-D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
-D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DeliveryMigration.resources
