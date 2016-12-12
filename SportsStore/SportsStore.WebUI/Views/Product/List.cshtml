@@ -4,21 +4,30 @@
 @{
     ViewBag.Title = "Products";
 }
-
+      <div>
 @foreach (var p in Model.Products)
 {
-    Html.RenderPartial("ProductSummary", p);
 
+            Html.RenderPartial("ProductSummary", p);
+
+      
     /*
      *  Works the same way as the line above. difference: returns the string of html text,
      *  instead of just putting the command in the buffer. and it's also works for efficiently
      * @Html.Partial("ProductSummary", p);
      * */
-    
-}
 
-<div class="text-center">
-     @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", 
+}
+    
+<br>
+</div>
+<div class=" text-center">
+
+    <ul class="pagination">
+        <li>@Html.PageLinks(Model.PagingInfo, x => Url.Action("List", 
     new { page = x, category = Model.CurrentCategory }))
+        </li>
+    </ul>
+
 
 </div>

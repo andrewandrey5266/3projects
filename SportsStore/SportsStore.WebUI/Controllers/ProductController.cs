@@ -16,7 +16,7 @@ namespace SportsStore.WebUI.Controllers
         private EFDbContext repository = new EFDbContext();
         private ProductService  productService = new ProductService();
   
-        public int PageSize = 3;
+        public int PageSize = 9;
 
         public ViewResult List(string category = null, int page = 1)
         {

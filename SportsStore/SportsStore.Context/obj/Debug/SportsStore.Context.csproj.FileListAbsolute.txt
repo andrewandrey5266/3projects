@@ -25,3 +25,6 @@ D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Co
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 D:\repository\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.InitialCreate.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DeliveryMigration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache

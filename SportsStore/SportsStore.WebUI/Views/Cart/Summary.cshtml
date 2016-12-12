@@ -1,11 +1,20 @@
 ﻿
-<div id="cart">
+
+    <a href="#" >
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        Cart @ViewBag.NumOfProducts item(s), @ViewBag.TotalPrice 
+    </a>
+
+
+
+
+@*<div id="cart">
     <span class="caption">
         <b>Your cart:</b>
         @ViewBag.NumOfProducts item(s),
         @ViewBag.TotalPrice 
               
     </span>
-    @Html.ActionLink("Checkout", "Index", "Cart", new { returnUrl =
-Request.Url.PathAndQuery }, null)
-</div>
+    @Html.ActionLink("Checkout", "Index", "Cart", 
+    new { returnUrl = Request.Url.PathAndQuery }, null)
+</div>*@

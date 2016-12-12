@@ -26,3 +26,4 @@ D:\repository\3projects\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework
 D:\repository\3projects\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.xml
 D:\repository\3projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.dll
 D:\repository\3projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.csprojResolveAssemblyReference.cache

@@ -4,43 +4,55 @@
 @{
 ViewBag.Title = "Cold Steel Store: Your Cart";
 }
-<h2>Your cart</h2>
-<table width="90%" align="center">
-    <thead>
-        <tr>
-            <th align="center">Quantity</th>
-            <th align="left">Item</th>
-            <th align="right">Price</th>
-            <th align="right">Subtotal</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var line in Model.UnitCarts) {
-            <tr>
-                <td align="center">@line.Quantity</td>
-                <td align="left">@line.Product.Name</td>
-                <td align="right">@line.Product.Price.ToString("c")</td>
-                <td align="right">@((line.Quantity * line.Product.Price).ToString("c"))</td>
-                <td>
-                    @using (Html.BeginForm("RemoveFromCart", "Cart")) {
-                        @Html.Hidden("Id", line.Product.Id)
-                        @Html.HiddenFor(x => x.ReturnUrl)
-                        <input class="actionButtons" type="submit" value="Remove" />
-}
-                </td>
-            </tr>
-}
-    </tbody>
-    <tfoot>
-        <tr>
-            <td colspan="3" align="right">Total:</td>
-            <td align="right">
-                @ViewBag.TotalPrice                
-            </td>
-        </tr>
-    </tfoot>
-</table>
-<p align="center" class="actionButtons">
-    <a href="@Model.ReturnUrl">Continue shopping</a>
-    @Html.ActionLink("Checkout now", "Checkout")
-</p>
+<h2 >Your cart</h2>
+@*<div class="col-sm-3">
+    <div class="panel panel-primary">
+        <div class="panel-heading">BLACK FRIDAY DEAL</div>
+        <div class="panel-body">
+            <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 70%" alt="Image"></div>
+        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+    </div>
+</div>*@
+<div class ="panel-group"></div>
+<div class ="panel panel-default">
+    <div class="col-sm-3"><h3> Item </h3>    </div>
+    <div class="col-sm-3"><h3> Price </h3>    </div>
+    <div class="col-sm-3"><h3> Quantity</h3> </div>
+    <div class="col-sm-3"><h3> Subtotal </h3>    </div>
+</div>
+    @foreach (var line in Model.UnitCarts) {
+    <div class="panel panel-body">
+            <div class="col-sm-3"><h4>@line.Product.Name</h4></div>
+            <div class="col-sm-3"><h4>@line.Product.Price.ToString("c")</h4>
+            </div>
+            <div class="col-sm-3">
+             <span class="glyphicon glyphicon-minus"/> 
+              @line.Quantity
+             <span class="glyphicon glyphicon-plus"/>
+           
+            </div>
+            <div class="col-sm-2"><h4>@((line.Quantity * line.Product.Price).ToString("c"))</h4>
+            </div>
+            <div class="col-sm-1">
+                <h4>
+                @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                {
+                    @Html.Hidden("Id", line.Product.Id)
+                    @Html.HiddenFor(x => x.ReturnUrl)
+                    <input class="btn btn-danger" type="submit" value="Remove" />
+                }
+                </h4>
+            </div>  
+    </div>         
+    }
+<div class="panel panel-body">
+
+    <div class="col-sm-3"> </div>
+
+    
+<div class="col-sm-3"><a href="@Model.ReturnUrl">Continue shopping</a></div>
+<div class="col-sm-3">@Html.ActionLink("Checkout now", "Checkout") </div>
+<div class="col-sm-3" >
+    Total price: @ViewBag.TotalPrice
+</div>
+</div>
