@@ -14,7 +14,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             Products <span class="caret"></span></a>
                 <ul class="dropdown-menu"> 
-                @foreach(var link in Model)
+                @foreach(var link in Model) // change to ng-repeat
                         {
                     <li>
                         @Html.RouteLink(link.ToString(), new
@@ -49,7 +49,13 @@
                 <li>             
                     @{Html.RenderAction("Summary", "Cart", Session["Cart"]);}
                 </li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign in</a></li>
+                <li>
+                    <a href="/Admin/Index">
+                    <span class="glyphicon glyphicon-user"></span>
+                    Sign in</a>          
+                  @*      <span class="glyphicon glyphicon-user"></span>
+                      @Html.ActionLink("Sign in", "Index", "Admin")*@
+                </li>
             </ul>  
             </div>
     </div>

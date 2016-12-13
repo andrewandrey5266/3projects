@@ -13,7 +13,6 @@ namespace SportsStore.WebUI.Controllers
 {
     public class ProductController : Controller
     {
-        private EFDbContext repository = new EFDbContext();
         private ProductService  productService = new ProductService();
   
         public int PageSize = 9;
@@ -27,7 +26,7 @@ namespace SportsStore.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = category == null ? repository.Products.Count() : 3
+                    TotalItems = category == null ? productService.GetProduct().Count : 3
                 },
                 CurrentCategory = category
             };

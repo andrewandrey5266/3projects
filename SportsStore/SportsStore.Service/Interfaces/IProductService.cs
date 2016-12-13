@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using SportsStore.Domain.Entities;
 namespace SportsStore.Service.Interfaces
 {
     public interface IProductService
     {
+       IEnumerable<Product> GetProduct(string category, int PageSize, int page);
+
+       List<Product> GetProduct();
+
+       void SaveProduct(Product product);
+
+       Product DeleteProduct(string productId);
     }
 }

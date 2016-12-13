@@ -11,7 +11,7 @@ using System.Data.Linq;
 using System.Data.Entity;
 namespace SportsStore.Service.Services
 {
-    public class CartService:ICartService
+    public class CartService : ICartService
     {
         public EFDbContext context = new EFDbContext();
          
@@ -39,10 +39,7 @@ namespace SportsStore.Service.Services
             context.SaveChanges();
 
             return cart;
-        }
+        }     
 
-      
-
-      
     }
 }

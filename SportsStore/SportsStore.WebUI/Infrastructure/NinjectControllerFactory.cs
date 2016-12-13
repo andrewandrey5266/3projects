@@ -8,6 +8,7 @@ using System.Linq;
 using SportsStore.Context;
 using SportsStore.Service.Interfaces;
 using SportsStore.Service.Services;
+using SportsStore.WebUI.Models;
 namespace SportsStore.WebUI.Infrastructure
 {
     // реализация пользовательской фабрики контроллеров,
@@ -33,21 +34,22 @@ namespace SportsStore.WebUI.Infrastructure
         private void AddBindings()
         {
             // конфигурирование контейнера
-           /* Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product> {
-                new Product { Name = "Football", Price = 25 },
-                new Product { Name = "Surf board", Price = 179 },
-                new Product { Name = "Running shoes", Price = 95 }
-                }.AsQueryable());
+            /* Mock<IProductRepository> mock = new Mock<IProductRepository>();
+             mock.Setup(m => m.Products).Returns(new List<Product> {
+                 new Product { Name = "Football", Price = 25 },
+                 new Product { Name = "Surf board", Price = 179 },
+                 new Product { Name = "Running shoes", Price = 95 }
+                 }.AsQueryable());
 
-            ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
-        */
+             ninjectKernel.Bind<IProductRepository>().ToConstant(mock.Object);
+         */
 
             //for services
             //ninjectKernel.Bind<IProductRepository>().To<EFProductRepository>();
             ninjectKernel.Bind<IUnitCartService>().To<UnitCartService>();
             ninjectKernel.Bind<ICartService>().To<CartService>();
-
+            ninjectKernel.Bind<IProductService>().To<ProductService>();
+            ninjectKernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
     }
 }

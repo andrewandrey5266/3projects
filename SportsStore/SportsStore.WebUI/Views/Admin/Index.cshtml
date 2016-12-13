@@ -1,0 +1,35 @@
+﻿@model SportsStore.ViewModel.Models.ProductsListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>All Products</h1>
+<table class="Grid">
+    <tr>
+        <th>ID</th>
+        <td>Category</td>
+        <th>Name</th>
+        <th class="NumericCol">Price</th>       
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model.Products) {
+    <tr>
+        <td>@item.Id</td>
+        <td>@item.Category.Name</td>
+        <td>@Html.ActionLink(item.Name, "Edit", new { item.Id })</td>
+        <td class="NumericCol">@item.Price.ToString("c")</td>
+        <td>
+            @using (Html.BeginForm("Delete", "Admin")) {
+            @Html.Hidden("productId", item.Id)  
+            <input type="submit" value="Delete" />
+            }
+        </td>
+    </tr>
+    }
+</table>
+<p>
+    @Html.ActionLink("Add a new product", "Create")
+</p>

@@ -10,7 +10,7 @@ using SportsStore.Domain.Entities;
 
 namespace SportsStore.Service.Services
 {
-    public class ProductService
+    public class ProductService: IProductService
     {
         EFDbContext context = new EFDbContext();
 
@@ -22,6 +22,32 @@ namespace SportsStore.Service.Services
                   .Skip((page - 1) * PageSize)
                   .Take(PageSize);
         }
+        public List<Product> GetProduct()
+        {
+            return context.Products.Include("Category").ToList();
+        }        
+        public void SaveProduct(Product product)
+        {
+            var prod = context.Products.Find(product.Id);
 
+            if (prod != null)
+            {
+                context.Products.Include("Category").Where(i => i.Id == prod.Id);
+                context.Products.Remove(prod);
+            }
+            
+            context.Products.Add(product);
+            context.SaveChanges();
+        }        
+        public Product DeleteProduct(string productId)
+        {
+            var product = context.Products.Find(productId);
+            if (product != null)
+            {
+                context.Products.Remove(product);
+                context.SaveChanges();
+            }
+            return product;
+        }
     }
 }
