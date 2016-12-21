@@ -8,8 +8,14 @@ namespace SportsStore.Domain.Entities
 {
     public class Delivery:IdEntity
     {
-        public decimal Price { get; set; }
-        
-        public Address Address { get; set; }
+        public decimal DeliveryPrice { get; set; }
+
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string HomeNumber { get; set; }
+        public string Appartment { get; set; }
+        public string PostIndex { get; set; }
+
+        public Cart Cart { get; set; }
     }
 }

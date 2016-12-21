@@ -13,13 +13,13 @@ namespace SportsStore.WebUI.Controllers
         private EFDbContext repository;
         private ICartService cartService;
         private IUnitCartService unitCartServ;
-        
-        public CartController(IUnitCartService unitCartServ, ICartService cartServ)
+        private IDeliveryService delivertyServ;
+        public CartController(IUnitCartService unitCartServ, ICartService cartServ, IDeliveryService delivServ)
         {
             repository = new EFDbContext();
             this.unitCartServ = unitCartServ;
             this.cartService = cartServ;
-
+            this.delivertyServ = delivServ;
         }
 
         public PartialViewResult Summary(CartViewModel cartVM)
@@ -84,7 +84,7 @@ namespace SportsStore.WebUI.Controllers
             }
             if (ModelState.IsValid)
             {
-              //  orderProcessor.ProcessOrder(cart, shippingDetails);
+                delivertyServ.SaveDelivery(shippingDetails);
                 Session["Cart"] = null;
                 return View("Completed");
             }

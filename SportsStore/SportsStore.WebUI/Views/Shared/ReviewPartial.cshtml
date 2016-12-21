@@ -1,0 +1,18 @@
+﻿@model SportsStore.Domain.Entities.Review
+
+<div class="col-sm-8">
+    <div class="panel panel-white post panel-shadow">
+        <div class="post-heading">
+
+            <div class="pull-left meta">
+                <div class="title h5">
+                    <a href="#"><b>@Model.User.Name</b></a>
+                    scored product for @Model.Score points
+                </div>
+                <h6 class="text-muted time">@Model.DateTime</h6>
+                <p>@Model.Comment</p>
+            </div>
+        </div>
+
+    </div>
+</div>

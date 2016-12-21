@@ -62,6 +62,22 @@
     <Compile Include="Migrations\201612130821544_ProductRistrictMigration.Designer.cs">
       <DependentUpon>201612130821544_ProductRistrictMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612151925168_UserReviewMigration.cs" />
+    <Compile Include="Migrations\201612151925168_UserReviewMigration.Designer.cs">
+      <DependentUpon>201612151925168_UserReviewMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612172147163_DeleteAddressMigration.cs" />
+    <Compile Include="Migrations\201612172147163_DeleteAddressMigration.Designer.cs">
+      <DependentUpon>201612172147163_DeleteAddressMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612172229157_ReviewDateTimeMigration.cs" />
+    <Compile Include="Migrations\201612172229157_ReviewDateTimeMigration.Designer.cs">
+      <DependentUpon>201612172229157_ReviewDateTimeMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612201845427_DiscountMigration.cs" />
+    <Compile Include="Migrations\201612201845427_DiscountMigration.Designer.cs">
+      <DependentUpon>201612201845427_DiscountMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,6 +100,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201612130821544_ProductRistrictMigration.resx">
       <DependentUpon>201612130821544_ProductRistrictMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612151925168_UserReviewMigration.resx">
+      <DependentUpon>201612151925168_UserReviewMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612172147163_DeleteAddressMigration.resx">
+      <DependentUpon>201612172147163_DeleteAddressMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612172229157_ReviewDateTimeMigration.resx">
+      <DependentUpon>201612172229157_ReviewDateTimeMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612201845427_DiscountMigration.resx">
+      <DependentUpon>201612201845427_DiscountMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

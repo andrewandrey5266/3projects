@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-
+using SportsStore.Domain.Entities;
 namespace SportsStore.ViewModel.Models
 {
     public class DeliveryViewModel
     {
-        [Required(ErrorMessage = "Please enter a country")]
-        public string Country { get; set; }
-        [Required(ErrorMessage = "Please enter a city")]
+        public decimal DeliveryPrice;
+
         public string City { get; set; }
-
-        // Post office or local store
-        [Required(ErrorMessage = "Please enter a post office or store")]
-        public string LocalDepartment { get; set; }
-
-        public string User;
-        public decimal TotalPrice;
+        public string Street { get; set; }
+        public string HomeNumber { get; set; }
+        public string Appartment { get; set; }
+        public string PostIndex { get; set; }
+       
+        public Cart Cart { get; set; }
+       
 
     }
 }

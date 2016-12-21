@@ -28,6 +28,7 @@ namespace SportsStore.WebUI
 
             ModelBinders.Binders.Add(typeof(CartViewModel), new CartModelBinder());
 
+           
         }
     }
 }

@@ -13,25 +13,47 @@ namespace SportsStore.WebUI.Controllers
 {
     public class ProductController : Controller
     {
-        private ProductService  productService = new ProductService();
-  
+        private IProductService productServ;
+        IReviewService reviewServ;
         public int PageSize = 9;
+
+        public ProductController(IProductService prodserv, IReviewService revserv)
+        {
+            productServ = prodserv;
+            reviewServ = revserv;
+        }
 
         public ViewResult List(string category = null, int page = 1)
         {
             ProductsListViewModel model = new ProductsListViewModel
             {
-                Products = productService.GetProduct(category, PageSize, page),
+                Products = productServ.GetProduct(category, PageSize, page),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = category == null ? productService.GetProduct().Count : 3
+                    TotalItems = category == null ? productServ.GetProducts().Count : 3
                 },
                 CurrentCategory = category
             };
             return View(model);
         }
 
+        public ViewResult Detailed(string id)
+        {
+            DetailedProductViewModel model = new DetailedProductViewModel
+            {
+                Product = productServ.GetProduct(id),
+                Reviews = reviewServ.GetReviews(id)
+            };
+            return View(model);
+        }
+
+        public ViewResult Contacts()
+        {
+            return View();
+        }
+
+        
     }
 }

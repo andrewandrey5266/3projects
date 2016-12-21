@@ -1,17 +1,5 @@
 ﻿@model SportsStore.Domain.Entities.Product
 
-@*<div >
-    <h3>@Model.Name</h3>
-    @Model.Description
-
-    @using (Html.BeginForm("AddToCart", "Cart")){        
-        @Html.HiddenFor(x => x.Id)
-        @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-        <input type="submit" value="+ Add to cart"/> 
-    }
-
-    <h4>@Model.Price.ToString("c")</h4>
-</div>*@
 <div class="col-sm-4">
     <div class="panel panel-primary">
         <div class="panel-heading">@Model.Name</div>
@@ -19,12 +7,20 @@
             <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
         </div>
         <div class="panel-footer">
-             @Model.Description     
-        @using (Html.BeginForm("AddToCart", "Cart"))
-        {        
-            @Html.HiddenFor(x => x.Id)
-            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            <input type="submit" value="+ Add to cart" /> 
+             $@Model.Price    
+        @if (Session["Auth"] != null)
+        {
+            using (Html.BeginForm("AddToCart", "Cart"))
+            {        
+                @Html.HiddenFor(x => x.Id)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                <input type="submit" value="+ Add to cart" /> 
+            }
+        }
+        @using (Html.BeginForm("Detailed", "Product"))
+        {
+            @Html.HiddenFor(x=>x.Id)
+            <input type="submit" value="See Details" />
         }
         </div>
     </div>

@@ -30,3 +30,21 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\bin\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Service.dll.config
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Service.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Service.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Context.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Domain.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.ViewModel.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Context.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.Domain.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.xml
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\obj\Debug\SportsStore.Service.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\System.Web.Mvc.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Service\bin\Debug\System.Web.Mvc.xml

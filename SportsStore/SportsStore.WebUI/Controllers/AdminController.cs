@@ -8,31 +8,37 @@ using SportsStore.ViewModel.Models;
 using SportsStore.Domain.Entities;
 namespace SportsStore.WebUI.Controllers
 {
-    [Authorize]
+  
     public class AdminController : Controller
     {
         public IProductService productServ;
-        public AdminController(IProductService prodServ)
+        ICategoryService categoryServ;
+        public AdminController(IProductService prodServ, ICategoryService categoryServ)
         {
             productServ = prodServ;
+            this.categoryServ = categoryServ;
         }
         public ViewResult Index()
         {
             var temp = new ProductsListViewModel
             {
-                Products = productServ.GetProduct()
+                Products = productServ.GetProducts()
             };
             return View(temp);
         }
-
+                
         public ViewResult Edit(string Id)
         {
-            Product product = productServ.GetProduct()
+            var categories = new List<string>();
+            categories.AddRange(categoryServ.GetCategories());
+            ViewBag.Categories = categories;
+
+            ProductViewModel product = productServ.GetProductsVM()
             .FirstOrDefault(p => p.Id == Id);
             return View(product);
         }
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(ProductViewModel product)
         {
             if (ModelState.IsValid)
             {
@@ -49,7 +55,11 @@ namespace SportsStore.WebUI.Controllers
 
         public ViewResult Create()
         {
-            return View("Edit", new Product());
+            var categories = new List<string>();
+            categories.AddRange(categoryServ.GetCategories());
+            ViewBag.Categories = categories;
+
+            return View("Edit", new ProductViewModel());
         }
 
         [HttpPost]

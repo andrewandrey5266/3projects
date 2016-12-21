@@ -12,3 +12,12 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\bi
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.ViewModel.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.Domain.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\SportsStore.Domain.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\System.Web.Mvc.dll
+C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\System.Web.Mvc.xml

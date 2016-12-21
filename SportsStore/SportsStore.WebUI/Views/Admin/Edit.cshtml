@@ -1,4 +1,4 @@
-﻿@model SportsStore.Domain.Entities.Product
+﻿@model SportsStore.ViewModel.Models.ProductViewModel
 
 @{
     ViewBag.Title = "Admin: Edit " + @Model.Name;
@@ -6,9 +6,73 @@
 }
 
 <h1>Edit @Model.Name</h1>
-@using (Html.BeginForm("Edit", "Admin"))
+@*@using (Html.BeginForm("Edit", "Admin"))
 {
     @Html.EditorForModel()
     <input type="submit" value="Save" />
     @Html.ActionLink("Cancel and return to List", "Index")
-}
+}*@
+
+
+<form action="/Admin/Edit" method="post" data-toggle="validator" class="register-form">
+    <div align="center">@Html.ValidationSummary() </div>
+    <input name="Id" class="form-control" type="hidden"/>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <b>Name</b>
+            <input name="Name" class="form-control" type="text" required>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <b>Description</b>
+            <input name="Description" class="form-control" type="text"required>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <b>Price</b>
+            <input name="Price" class="form-control" type="number" min="1" required/>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <b>Category name</b>
+            <input name="CategoryName" class="form-control" type="text" required/>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+    <b>Category </b><select>
+        @foreach(var c in ViewBag.Categories)
+        {
+            <option value="volvo">@c</option>
+        }
+    </select>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <b>Discount percentage</b>
+            <input name="DiscountPercentage" class="form-control" type="number" required/>
+            <div class="help-block with-errors"></div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-5">
+            <button class="btn btn-default logbutton" type="submit">Confirm</button>
+
+        </div>
+        <div class="col-md-1">
+            <a class="btn btn-default regbutton" href="/Admin/Index">Cancel</a>
+        </div>
+    </div>
+</form>

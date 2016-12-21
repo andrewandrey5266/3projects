@@ -1,4 +1,14 @@
-﻿BODY, TD { font-family: Segoe UI, Verdana }
+﻿table { margin: 10px 0;}
+th { text-align: left;}
+.nameCol {width: 100px;}
+.locationCol {width: 100px;}
+.selectCol {width: 30px;}
+.display { float: left; border: thin solid black; margin: 10px; padding: 10px;}
+.display label {display: inline-block;width: 100px;}
+
+
+
+BODY, TD { font-family: Segoe UI, Verdana }
 H1 { padding: .5em; padding-top: 0; font-weight: bold;
 font-size: 1.5em; border-bottom: 2px solid gray; }
 DIV#content { padding: .9em; }
@@ -13,9 +23,3 @@ DIV.Message { background: gray; color:White; padding: .2em; margin-top:.25em; }
 .input-validation-error { border: 1px solid red; background-color: #ffeeee; }
 .validation-summary-errors { font-weight: bold; color: red; }
 .validation-summary-valid { display: none; }
-
-.editor-field { margin-bottom: .8em; }
-.editor-label { font-weight: bold; }
-.editor-label:after { content: ":" }
-.text-box { width: 25em; }
-multi-line { height: 5em; font-family: Segoe UI, Verdana; }s

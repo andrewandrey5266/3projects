@@ -6,16 +6,46 @@
 <div align ="center">
     <h2>Check out now</h2>
     Please enter your details, and we'll ship your goods right away!
-    @using (Html.BeginForm())
-    {    
+   <form method="post" action="/Cart/Checkout" data-toggle="validator">    
         @Html.ValidationSummary()
-        <h3>Address</h3>   
-        <div>Country: @Html.EditorFor(x => x.Country)</div>
-        <div>City: @Html.EditorFor(x => x.City)</div>
-        <div>Local post office or store: @Html.EditorFor(x => x.LocalDepartment)</div><br /><br /><br />
+       <input type="hidden" name="Cart_Id" />
+       <input type="hidden" name="DeliveryPrice" value=20 />
+
+        City : <input type ="text" name="City" required="required"/>
+        <div class="help-block with-errors"></div>
+        Street :
+        <input type="text" name="Street" required="required" />
+        <div class="help-block with-errors"></div>
+        Home Number :
+        <input type="text" name="HomeNumber" required="required" />
+        <div class="help-block with-errors"></div>
+        Appartment :
+        <input type="text" name="Appartment" required="required" />
+        <div class="help-block with-errors"></div>
+        Post Index :
+        <input type="text" name="PostIndex" required="required" />
+        <div class="help-block with-errors"></div>
+
+        
 
         <p align="center">
             <input class="actionButtons" type="submit" value="Complete order" />
         </p>
-    }
+   </form>
 </div>
+
+
+@*public class DeliveryViewModel
+    {
+        public decimal DeliveryPrice;
+
+        public string City { get; set; }
+        public string Street { get; set; }
+        public string HomeNumber { get; set; }
+        public string Appartment { get; set; }
+        public string PostIndex { get; set; }
+       
+        public Cart Cart { get; set; }
+       
+
+    }*@

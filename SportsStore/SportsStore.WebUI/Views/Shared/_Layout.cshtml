@@ -2,26 +2,24 @@
 
 <!DOCTYPE html>
 <html>
-<head>
+<head> 
+      <title>@ViewBag.Title</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+ 
     <link href="~/Content/Site.css" type="text/css" rel="stylesheet" />
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/Scripts/jquery-1.9.1.js"></script>    
     <link href="~/Content/bootstrap.min.css" type="text/css"  rel="stylesheet">
-    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <script src="~/Scripts/validate.js"></script>
+    
 </head>
 <body>
-    <div class="jumbotron">
-        <div class="container text-center">
-            <h1>COLD STEEL STORE</h1>
-        </div>
-    </div>          
+             
     @{ 
         Html.RenderAction("Menu", "Nav");
-    }       
+    }     
    
                 
      @RenderBody()

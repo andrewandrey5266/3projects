@@ -1,6 +1,6 @@
 ﻿namespace SportsStore.Domain.Entities
 {
-    public class UnitCart : IdEntity
+    public class UnitCart:IdEntity
     {        
         public int Quantity { get; set; }
         

@@ -50,6 +50,10 @@ namespace SportsStore.WebUI.Infrastructure
             ninjectKernel.Bind<ICartService>().To<CartService>();
             ninjectKernel.Bind<IProductService>().To<ProductService>();
             ninjectKernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
+            ninjectKernel.Bind<IReviewService>().To<ReviewService>();
+            ninjectKernel.Bind<IUserService>().To<UserService>();
+            ninjectKernel.Bind<IDeliveryService>().To<DeliveryService>();
+            ninjectKernel.Bind<ICategoryService>().To<CategoryService>();
         }
     }
 }
