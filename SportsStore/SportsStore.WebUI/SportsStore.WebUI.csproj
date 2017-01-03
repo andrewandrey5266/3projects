@@ -245,6 +245,7 @@
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="MyHtml\ProductList.html" />
+    <Content Include="MyHtml\ProductPage.html" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
@@ -282,7 +283,6 @@
     <Content Include="Views\pages\about.html" />
     <Content Include="Views\pages\contact.html" />
     <Content Include="Views\pages\home.html" />
-    <Content Include="Views\Shared\home.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

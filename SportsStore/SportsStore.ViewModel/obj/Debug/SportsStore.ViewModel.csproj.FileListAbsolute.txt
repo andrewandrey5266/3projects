@@ -30,3 +30,5 @@ D:\repository\5semester\course work\SportsStore\SportsStore.ViewModel\bin\Debug\
 D:\repository\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.csprojResolveAssemblyReference.cache
 D:\repository\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.dll
 D:\repository\5semester\course work\SportsStore\SportsStore.ViewModel\obj\Debug\SportsStore.ViewModel.pdb
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\System.Web.Mvc.dll
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.ViewModel\bin\Debug\System.Web.Mvc.xml

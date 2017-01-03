@@ -28,7 +28,7 @@ namespace SportsStore.WebUI.Controllers
             review.User = new User{ Id = UserId };
             if (ModelState.IsValid)
             {
-                reviewServ.AddReview(review);
+                //reviewServ.AddReview(review);
 
                 return RedirectToAction("Detailed", "Product", new { Id = ProductId });
             }

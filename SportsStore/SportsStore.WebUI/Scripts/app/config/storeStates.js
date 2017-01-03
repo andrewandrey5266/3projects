@@ -37,6 +37,12 @@
             controller: 'searchController'
         })
 
+        .state('detailed', {
+            url: '/detailed/:productId',
+             templateUrl: 'MyHtml/ProductPage.html',
+             controller: 'productPageController'
+        })
+
         //-- doesn't work
         .state('editProduct', {
             url: '/edit',

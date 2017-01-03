@@ -6,35 +6,43 @@ using System.Threading.Tasks;
 using SportsStore.Service.Interfaces;
 using SportsStore.Domain.Entities;
 using SportsStore.Context;
+using SportsStore.ViewModel.Models;
+
 namespace SportsStore.Service.Services
 {
     public class ReviewService : IReviewService
     {
         EFDbContext context = new EFDbContext();
-        public List<Review> GetReviews(string productId)
+        public List<ReviewViewModel> GetReviews(string productId)
         {
-            return context.Reviews
+            var reviews = context.Reviews
                 .Include("Product")
                 .Include("User")
                 .Where(i => i.Product.Id == productId)
                 .ToList();
+
+            var response = new List<ReviewViewModel>();
+            foreach (var c in reviews)
+                response.Add(new ReviewViewModel(c));
+
+
+            return response;
         }
 
 
-        public bool AddReview(Review review)
+        public bool AddReview(ReviewViewModel review)
         {
-            //hard code ( because User in UserViewModel is stored only partially, and we need to find it 
-            review.User = context.Users
-                .Where(i => i.Id == review.User.Id)
-                .FirstOrDefault();
-
-            review.Product = context.Products
-                .Where(i => i.Id == review.Product.Id)
-                .FirstOrDefault();
-
+     
             review.DateTime = DateTime.Now.ToString();
 
-            context.Reviews.Add(review);
+            context.Reviews.Add(new Review
+            {
+                Comment = review.Comment,
+                Score = review.Score,
+                DateTime = DateTime.Now.ToString(),
+                User = context.Users.Where(i => i.Id == review.UserId).FirstOrDefault(),
+                Product = context.Products.Where(i=> i.Id == review.ProductId).FirstOrDefault()
+            });
             context.SaveChanges();
             return true;
         }

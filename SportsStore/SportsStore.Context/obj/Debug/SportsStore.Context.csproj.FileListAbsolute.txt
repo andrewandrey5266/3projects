@@ -23,12 +23,9 @@ C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\bin\
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.xml
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csprojResolveAssemblyReference.cache
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.InitialCreate.resources
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.DeliveryMigration.resources
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.csproj.GenerateResource.Cache
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.dll
 C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.pdb
-C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.ProductRistrictMigration.resources
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.dll.config
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.dll
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\bin\Debug\SportsStore.Context.pdb
@@ -60,3 +57,7 @@ C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.WishlistMigration.resources
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.Wishlist2Migration.resources
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.Wishlist3Migration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.StartMigration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.WishlistMigration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.Wishlist2Migration.resources
+C:\Users\Dusheba\Documents\GitHub\3projects\SportsStore\SportsStore.Context\obj\Debug\SportsStore.Context.Migrations.Wishlist3Migration.resources

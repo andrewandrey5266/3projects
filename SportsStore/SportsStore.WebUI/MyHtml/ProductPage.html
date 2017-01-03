@@ -1,0 +1,160 @@
+﻿
+    <div class="content-wrapper">
+        <div class="item-container">
+            <div class="container">
+                <div class="raw">
+                    <div class="product col-md-3 col-md-offset-3">
+                        <center>
+							<<-IMAGE->>	<!--<img id="item-display" src="~/Content/Images/@{@Model.Product.Id}.jpg" style="width: 100%" alt=""></img>-->
+							</center>
+                    </div>
+                                        
+                </div>
+               
+                <div class="col-md-6">
+                    <div class="product-title">{{product.Name}} <b>{{product.Category.Name}}</b></div>
+                  
+                    <div class="product-rating"><i class="fa fa-star gold"></i><i class="fa fa-star gold"></i><i class="fa fa-star gold"></i><i class="fa fa-star gold"></i><i class="fa fa-star-o"></i></div>
+                    <hr>
+                    <div class="product-price">${{product.Price}} 
+                        <!--@if (@Model.Product.Discount.Percentage != 0)
+                        {<h4>now with -@Model.Product.Discount.Percentage% off</h4>}</div>-->
+    
+                    <div ng-show="product.InStock == true" class="product-stock">In Stock</div>                  
+                    <div ng-show="product.InStock == false" class="product-outstock">No more</div>                        
+                   
+                      
+                    <hr>
+
+                  
+
+<!--                    @if (Session["Auth"] != null)
+                    {
+
+                        using (Html.BeginForm("AddToCart", "Cart"))
+                        {        
+                            @Html.Hidden("Id", @Model.Product.Id)
+
+                            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                            if (@Model.Product.InStock)
+                            {
+                                <div class="btn-group cart">
+                           <button type="submit" class="btn btn-success">
+                               Add to cart 
+                           </button>
+                       </div>}
+                            
+                               
+                           
+                        <div class="btn-group wishlist" ng-controller="wishListController">
+                            <button type="button" class="btn btn-danger" ng-click="addWish('@Model.Product.Id', '@(((UserViewModel)Session["Auth"]).Id)')">
+                                Add to wishlist 
+                            </button>
+                            <button type="button" class="btn btn-danger" ng-click="getWishes('@(((UserViewModel)Session["Auth"]).Id)')">
+                                get wishlist 
+                            </button>
+                        </div>
+                       
+                        }
+                    }                -->
+                      
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <b>Description :</b>
+        <div class="product-desc">
+            <p>{{product.Description}}</p>
+        </div>
+        <div class="col-md-12 product-info">
+            <ul id="myTab" class="nav nav-tabs nav_tabs">
+
+               <!-- @*<li class="active"><a href="#service-one" data-toggle="tab">CHARACTERISTICS</a></li>*@
+                <li><a href="#service-one" data-toggle="tab">REVIEWS</a></li>-->
+                
+            </ul>
+            <section class="container">
+             <!--   @foreach (var c in @Model.Reviews)
+                        {
+                    <div class="container">
+                        <div class="row">
+                            @Html.Partial("ReviewPartial", c);
+                        </div>
+                    </div>}-->
+                <ul ng-repeat="x in reviews">
+                    <li>{{x.Comment}} by {{x.UserName}}</li>
+                </ul>
+               <!-- @if (((UserViewModel)Session["Auth"]) != null)
+                        {
+                            using (Html.BeginForm("Edit", "Review", FormMethod.Post))
+                            {
+                    <div class="form-group">
+                        <label for="comment">Comment:</label>
+                        <input placeholder="Share your expressions here" name="Comment" class="form-control" rows="5" id="comment" required/>
+                    </div>
+                            
+                    <p>Estimate product (from 1 to 5):</p>
+                    <input name="Score" placeholder="Give your score!" pattern="[1-5]{1}" required/>
+       
+                    @Html.Hidden("ProductId", Model.Product.Id);
+                    @Html.Hidden("UserId", ((UserViewModel)Session["Auth"]).Id);
+
+    
+    
+                    <input type="submit" value="Save" />
+                    @Html.ActionLink("Cancel review", "Detailed")
+                            }
+                        }-->
+
+            </section>
+            <div id="myTabContent" class="tab-content">
+            
+                <div class="tab-pane fade" id="Div1">
+
+                   <!-- @*<section class="container">
+                        @foreach (var c in @Model.Reviews)
+                        {
+                            <div class="container">
+                                <div class="row">
+                                    @Html.Partial("ReviewPartial", c);
+                                </div>
+                            </div>}
+
+                        @if (((UserViewModel)Session["Auth"]) != null)
+                        {
+                            using (Html.BeginForm("Edit", "Review", FormMethod.Post))
+                            {
+                           <div class="form-group">
+                                <label for="comment">Comment:</label>
+                                <input placeholder="Share your expressions here" name="Comment" class="form-control" rows="5" id="Text1"></input>
+                            </div>
+                            
+                            <p>Estimate product (from 1 to 5):</p>
+                            <input name="Score" placeholder="Give your score!" type="number" pattern="[1-5]{1}"/>
+                            @Html.Hidden("ProductId", Model.Product.Id);
+                            @Html.Hidden("UserId", ((UserViewModel)Session["Auth"]).Id);
+
+    
+    
+                            <input type="submit" value="Save" />
+                            @Html.ActionLink("Cancel review", "Detailed")
+                            }
+                        }
+
+                    </section>*@-->
+
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+            
+
+
+
+
+

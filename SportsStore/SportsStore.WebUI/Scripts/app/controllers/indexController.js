@@ -1,5 +1,8 @@
-﻿app.controller("indexController", function ($scope) {
-    //$state.go('category', { categ: 'all', page: 1 });
+﻿app.controller("indexController", function ($scope, $state) {
+    $scope.init = function(){
+        $state.go('category', { categ: 'all', page: 1 });
+    }
+    $scope.init();
 });
 
 app.controller('categController', function ($scope, storeService) {
@@ -115,4 +118,31 @@ app.controller('quickSearchController', function ($scope, $stateParams, storeSer
     $scope.getSearchResult = function () {
         $state.go('search', { name: $scope.keyword, page: 1 });
     }
+});
+
+
+app.controller('productPageController',function($scope, $stateParams, storeService){
+    $scope.product;
+    $scope.reviews;
+
+  
+
+    $scope.getReviews = function(productId){
+       storeService.getReviews(productId).then(function(response){
+            $scope.reviews = response.data;
+        });
+    }
+    $scope.getProduct = function(productId){
+       storeService.getProduct(productId).then(function(response){
+            $scope.product = response.data;
+        });
+    }
+
+  $scope.init = function(){
+        $scope.getProduct($stateParams.productId);
+        $scope.getReviews($stateParams.productId);
+
+    }
+
+    $scope.init();
 });

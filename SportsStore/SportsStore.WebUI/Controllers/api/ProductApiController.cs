@@ -59,5 +59,13 @@ namespace SportsStore.WebUI.Controllers
            // PageService ---->>>>>>
             return Request.CreateResponse(HttpStatusCode.OK, count);
         }
+
+        [System.Web.Http.HttpGet]
+        public async Task<HttpResponseMessage> GetProductDetailed(string productId)
+        { 
+            var product = productServ.GetProduct(productId);
+
+            return Request.CreateResponse(HttpStatusCode.OK, product);
+        }
     }
 }

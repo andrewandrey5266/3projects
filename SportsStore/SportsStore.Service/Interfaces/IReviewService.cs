@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SportsStore.Domain.Entities;
+using SportsStore.ViewModel.Models;
 namespace SportsStore.Service.Interfaces
 {
     public interface IReviewService
     {
-       List<Review> GetReviews(string productId);
+       List<ReviewViewModel> GetReviews(string productId);
 
-       bool AddReview(Review review);
+       bool AddReview(ReviewViewModel review);
     }
 }

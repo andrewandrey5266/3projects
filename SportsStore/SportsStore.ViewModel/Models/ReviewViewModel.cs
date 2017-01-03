@@ -13,7 +13,21 @@ namespace SportsStore.ViewModel.Models
         public string DateTime { get; set; }
 
 
-        public User User { get; set; }
-        public Product Product { get; set; }
+        public string UserId { get; set; }
+        public string ProductId { get; set; }
+
+        public string UserName { get; set; }
+ 
+
+        public ReviewViewModel(Review review)
+        {
+            this.Comment = review.Comment;
+            this.Score = review.Score;
+            this.DateTime = review.DateTime;
+            this.UserName = review.User.Name;
+            this.ProductId = review.Product.Id;
+            this.UserId = review.Product.Id;
+
+        }
     }
 }

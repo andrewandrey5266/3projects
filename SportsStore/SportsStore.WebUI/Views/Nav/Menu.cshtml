@@ -38,8 +38,7 @@
                 <li ng-controller="quickSearchController" class="navbar-form navbar-left input-group row">
                     <input type="text" ng-model="keyword" placeholder="Enter a product name" class="form-control"
                         ng-keyup="($event.keyCode == 13 && getSearchResult()) || 
-                        ($event.keyCode != 13 && getSearchResultCount())">              
-                    {{keyword}}
+                        ($event.keyCode != 13 && getSearchResultCount())">            
                      <p class="form-control">{{count}}</p>
 
                 </li>

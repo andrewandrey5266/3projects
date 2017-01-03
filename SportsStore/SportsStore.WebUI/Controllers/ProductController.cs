@@ -44,7 +44,7 @@ namespace SportsStore.WebUI.Controllers
             DetailedProductViewModel model = new DetailedProductViewModel
             {
                 Product = productServ.GetProduct(id),
-                Reviews = reviewServ.GetReviews(id)
+                //Reviews = reviewServ.GetReviews(id)
             };
          
             return View(model);

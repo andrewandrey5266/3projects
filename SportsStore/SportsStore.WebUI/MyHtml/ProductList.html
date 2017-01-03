@@ -2,15 +2,18 @@
     <br />
     category : {{categ}};
     <br />
-    items on page: {{products.Products.length}}</h5>
+    items on page: {{products.Products.length}}
+    <br />
+    total pages : {{totalPages}}
+</h5>
 
 <div class="container">
-    <div ng-repeat="product in products.Products | filter : search.Name">
+    <div ng-repeat="product in products.Products">
         <div class="col-sm-4 panel panel-primary">
             <div class="panel-heading">{{product.Name}}</div>
             <div class="panel-body">
                 <h1>{{product.Id}}</h1>
-                <img type="image" src="~/Content/Images/{{product.Id}}.jpg" width="300" height="200" alt="Image" />
+                <img type="image" src="~/Content/Images/'{{product.Id}}'.jpg" width="300" height="200" alt="Image" />
                 
 
             </div>
@@ -35,11 +38,16 @@
                     }
                 </div>-->
 
-                <div class="btn-group" method="get">
+<!--                <div class="btn-group" method="get">
                     <form action="Product/Detailed">
                         <input type="hidden" name="Id" value="{{product.Id}}" />
                         <input type="submit" class="btn btn-warning" value="See Details" />
                     </form>
+                </div>-->
+
+                <div class="btn-group" method="get">
+                    <button class="btn btn-warning" ui-sref="detailed({productId: '{{product.Id}}' })" >More</button>
+                   
                 </div>
             </div>
         </div>
