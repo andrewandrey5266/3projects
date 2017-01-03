@@ -1,27 +1,41 @@
 ﻿@model SportsStore.Domain.Entities.Product
 
-<div class="col-sm-4">
+<div class="col-sm-3">
     <div class="panel panel-primary">
         <div class="panel-heading">@Model.Name</div>
         <div class="panel-body">
             <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width: 100%" alt="Image">
         </div>
-        <div class="panel-footer">
-             $@Model.Price    
-        @if (Session["Auth"] != null)
-        {
+        <div class="btn-group btn-group-justified">
+         <div class="btn-group">
+             @if (Session["Auth"] != null)
+        {         
             using (Html.BeginForm("AddToCart", "Cart"))
             {        
-                @Html.HiddenFor(x => x.Id)
-                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                <input type="submit" value="+ Add to cart" /> 
+                 @Html.Hidden("Id", @Model.Id)
+
+                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                 <input type="submit" class="btn btn-success" value="Add to cart" />
+                     
+            }  }</div>
+            <div class="btn-group">  <h4 align="center">$@Model.Price</h4> </div>
+                <div class="btn-group">
+                    @using (Html.BeginForm("Detailed", "Product"))
+            {
+                        @Html.HiddenFor(x=>x.Id)
+                        <input type="submit" class="btn btn-danger" value="See Details" />                
+                    
             }
-        }
-        @using (Html.BeginForm("Detailed", "Product"))
-        {
-            @Html.HiddenFor(x=>x.Id)
-            <input type="submit" value="See Details" />
-        }
+                </div>
         </div>
+          </div>
     </div>
-</div>
+            
+  
+
+@*using (Html.BeginForm("AddToCart", "Cart"))
+            {        
+                @Html.HiddenFor(x => x.Id)
+@Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+<input type="submit" value="+ Add to cart" />
+}*@

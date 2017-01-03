@@ -1,15 +1,35 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html >
 <head>
     <meta name="viewport" content="width=device-width" />
     <link href="~/Content/Admin.css" rel="stylesheet" type="text/css" />
     <script src ="~/Scripts/jquery-1.9.1.js"></script>
     @Scripts.Render("~/Scripts/jquery-1.9.1.js")
     @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.js")
-    <title></title>
+    <link href="~/Content/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-1.9.1.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular-route.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+    <script src="~/Scripts/app/app.js"></script>
+    <script src="~/Scripts/app/services/storeService.js"></script>
+    <script src="~/Scripts/app/controllers/indexController.js"></script>
+    <script src="~/Scripts/app/config/storeRoutes.js"></script>
+    <script src="~/Scripts/app/config/storeStates.js"></script>
+
+
+    <title>@ViewBag.Title</title>
 </head>
-<body>
+<body ng-app="app" ng-controller="categController">
     <div>
         @if (TempData["message"] != null) {
             <div class="Message">@TempData["message"]</div>

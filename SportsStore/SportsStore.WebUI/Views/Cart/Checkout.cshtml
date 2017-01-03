@@ -11,19 +11,19 @@
        <input type="hidden" name="Cart_Id" />
        <input type="hidden" name="DeliveryPrice" value=20 />
 
-        City : <input type ="text" name="City" required="required"/>
+        * City : <input type ="text" name="City" required="required"/>
         <div class="help-block with-errors"></div>
-        Street :
+        * Street :
         <input type="text" name="Street" required="required" />
         <div class="help-block with-errors"></div>
-        Home Number :
-        <input type="text" name="HomeNumber" required="required" />
+        * Home Number :
+        <input pattern="[0-9]{1,5}" name="HomeNumber" required="required" />
         <div class="help-block with-errors"></div>
-        Appartment :
-        <input type="text" name="Appartment" required="required" />
+        * Appartment :
+        <input pattern="[0-9]{1,5}" name="Appartment" required="required" />
         <div class="help-block with-errors"></div>
-        Post Index :
-        <input type="text" name="PostIndex" required="required" />
+        * Post Index :
+        <input pattern="[0-9]{5}" name="PostIndex" required="required" />
         <div class="help-block with-errors"></div>
 
         

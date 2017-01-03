@@ -7,21 +7,24 @@
 
 
 <h1>All Products</h1>
-@Html.ActionLink("To Main Page", "List", "Product")
-<table class="Grid">
+<a href="/">To main page</a>
+<h4><table class="Grid">
     <tr>
-        <th>ID</th>
-        <td>Category</td>
+       
+        <th>Category</th>
         <th>Name</th>
-        <th class="NumericCol">Price</th>       
+        <th class="NumericCol">Price</th> 
+        <th class="NumericCol">Discount %</th>   
+        <th class="NumericCol">In stock</th>   
   @*      <th>Actions</th>*@
     </tr>
     @foreach (var item in Model.Products) {
     <tr>
-        <td>@item.Id</td>
         <td>@item.Category.Name</td>
-        <td>@Html.ActionLink(item.Name, "Edit", new { item.Id })</td>
+        <td>@Html.ActionLink(item.Name, "Edit", new { Id = item.Id })</td>
         <td class="NumericCol">@item.Price.ToString("c")</td>
+        <td class="NumericCol">@item.Discount.Percentage</td>
+        <td class="NumericCol">@item.InStock </td>
       @*  <td>
             @using (Html.BeginForm("Delete", "Admin")) {
             @Html.Hidden("productId", item.Id)  
@@ -31,6 +34,17 @@
     </tr>
     }
 </table>
+</h4>
 <p>
     @Html.ActionLink("Add a new product", "Create")
+<a ui-sref="editProduct" href="">ADDDDDDD</a>
 </p>
+
+
+<div id="main">
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div ui-view></div>
+
+</div>

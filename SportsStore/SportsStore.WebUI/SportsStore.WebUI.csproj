@@ -142,12 +142,17 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Binder\CartModelBinder.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AdminApiController.cs" />
+    <Compile Include="Controllers\api\AdminApiController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\api\CategoryApiController.cs" />
+    <Compile Include="Controllers\api\DiscountApiController.cs" />
+    <Compile Include="Controllers\api\WishListApiController.cs" />
     <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\api\ProductApiController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ReviewApiController.cs" />
+    <Compile Include="Controllers\api\ReviewApiController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -167,6 +172,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\1.jpg" />
+    <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\4.jpg" />
+    <Content Include="Content\Images\5.jpg" />
+    <Content Include="Content\Images\6.jpg" />
     <Content Include="Content\Logging.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -233,7 +244,20 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="MyHtml\ProductList.html" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\config\storeRoutes.js" />
+    <Content Include="Scripts\app\config\storeStates.js" />
+    <Content Include="Scripts\errors.json" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\controllers\indexController.js" />
+    <Content Include="Scripts\app\services\storeService.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\Custom\AdminEdit.js" />
@@ -253,7 +277,12 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\validate.js" />
+    <Content Include="Scripts\validator.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\pages\about.html" />
+    <Content Include="Views\pages\contact.html" />
+    <Content Include="Views\pages\home.html" />
+    <Content Include="Views\Shared\home.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -286,7 +315,10 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Product\Contacts.cshtml" />
     <Content Include="Views\Admin\Edit.cshtml" />
-    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Account\MyProfile.cshtml" />
+    <Content Include="Views\Shared\_LinksLayout.cshtml" />
+    <Content Include="Scripts\version.json" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SportsStore.Context\SportsStore.Context.csproj">

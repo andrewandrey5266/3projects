@@ -9,10 +9,16 @@ namespace SportsStore.Service.Interfaces
 {
     public interface IProductService
     {
-       IEnumerable<Product> GetProduct(string category, int PageSize, int page);
+       List<Product> GetProducts(string category, int pageSize, int page);
+
+       List<Product> GetProducts(string category);
 
        List<Product> GetProducts();
 
+       List<Product> SearchProduct(string name, string category, int pageSize, int page);
+
+       IEnumerable<ProductViewModel> GetProductsVM();
+ 
        Product GetProduct(string id);
 
        void SaveProduct(ProductViewModel product);
@@ -21,7 +27,5 @@ namespace SportsStore.Service.Interfaces
 
       void EditProduct(string id, ProductViewModel product);
 
-
-      IEnumerable<ProductViewModel> GetProductsVM();
     }
 }

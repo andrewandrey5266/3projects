@@ -8,10 +8,10 @@ namespace SportsStore.ViewModel.Models
 {
     public class LoginViewModel
     {
-        [Required]
+       // [Required]
         public string Logname { get; set; }
-        [Required]
-        [DataType(DataType.Password)]
+       // [Required]
+        //[DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }

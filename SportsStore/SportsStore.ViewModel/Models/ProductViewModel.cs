@@ -26,38 +26,20 @@ namespace SportsStore.ViewModel.Models
         [Range(0.01, 999.00, ErrorMessage = "Please enter a positive price in range of [0.01, 999.00]")]
         public decimal Price { get; set; }
 
-        [DataMember]
-        public Category Category { get; set; }
+        public bool InStock { get; set; }
 
         [Required]
         public string CategoryName
         {
-            get
-            {
-                return Category == null ? "none" : Category.Name ;
-            }
-            set
-            {
-                Category.Name = value;
-            }
+            get;
+            set;
         }
-
-        [DataMember]
-        public Discount Discount { get; set; }
-
 
         [Required]
         [Range(0, 100)]
         public int DiscountPercentage
         {
-            get
-            {
-                return Discount == null? 0 : Discount.Percentage;
-            }
-            set
-            {
-                Discount.Percentage = value;
-            }
+            get;set;
         }
 
         public ProductViewModel() { }
@@ -68,9 +50,8 @@ namespace SportsStore.ViewModel.Models
             this.Name = product.Name;
             this.Description = product.Description;
             this.Price = product.Price;
-            this.Category = product.Category;
-            this.Discount = product.Discount;
-                
+           this.DiscountPercentage = product.Discount.Percentage;
+           this.InStock = product.InStock;
         }
     }
 }

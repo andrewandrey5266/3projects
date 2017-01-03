@@ -13,19 +13,21 @@ namespace SportsStore.Service.Services
     {
         private EFDbContext context = new EFDbContext();
 
-        public void SaveDelivery(DeliveryViewModel deliv)
+        public void SaveDelivery(DeliveryViewModel deliv, CartViewModel cart)
         {
-            context.Deliveries.Add(new Delivery
+            var delivery = new Delivery
             {
                 DeliveryPrice = deliv.DeliveryPrice,
                 City = deliv.City,
                 Street = deliv.Street,
                 HomeNumber = deliv.HomeNumber,
                 Appartment = deliv.Appartment,
-                PostIndex = deliv.PostIndex,
-                Cart = deliv.Cart
-            });
-            context.SaveChanges();
+                PostIndex = deliv.PostIndex
+            };
+            context.Deliveries.Add(delivery);
+
+           context.SaveChanges();
+           new CartService().CompleteCart(cart, delivery.Id);
         }
     }
 }

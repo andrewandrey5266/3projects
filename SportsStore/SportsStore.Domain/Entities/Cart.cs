@@ -12,7 +12,7 @@ namespace SportsStore.Domain.Entities
         public DateTime? OrderDate { get; set; }
         public decimal TotalPrice { get; set; }
 
-        public int UserID { get; set; }
-        public int DeliveryID { get; set; }        
+        public User User { get; set; }
+        public Delivery Delivery { get; set; }        
     }
 }

@@ -26,9 +26,9 @@ ViewBag.Title = "Cold Steel Store: Your Cart";
             <div class="col-sm-3"><h4>@line.Product.Price.ToString("c")</h4>
             </div>
             <div class="col-sm-3">
-             <span class="glyphicon glyphicon-minus"/> 
-              @line.Quantity
-             <span class="glyphicon glyphicon-plus"/>
+             @*<span class="glyphicon glyphicon-minus"/>*@ 
+            <h4>  @line.Quantity</h4>
+             @*<span class="glyphicon glyphicon-plus"/>*@
            
             </div>
             <div class="col-sm-2"><h4>@((line.Quantity * line.Product.Price).ToString("c"))</h4>
@@ -45,14 +45,15 @@ ViewBag.Title = "Cold Steel Store: Your Cart";
             </div>  
     </div>         
     }
-<div class="panel panel-body">
 
-    <div class="col-sm-3"> </div>
 
+ 
+    <div class="raw">
     
-<div class="col-sm-3"><a href="/Product/List">Continue shopping</a></div>
+        <div class="col-sm-3 col-sm-offset-3"><a href="/">Continue shopping</a></div>
 <div class="col-sm-3">@Html.ActionLink("Checkout now", "Checkout") </div>
 <div class="col-sm-3" >
-    Total price: @ViewBag.TotalPrice
+    <h3>Total price: $@ViewBag.TotalPrice<br />+ $9.99 for delivery</h3>
 </div>
 </div>
+

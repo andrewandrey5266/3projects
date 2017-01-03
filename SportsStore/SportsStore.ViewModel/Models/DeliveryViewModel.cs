@@ -15,10 +15,6 @@ namespace SportsStore.ViewModel.Models
         public string Street { get; set; }
         public string HomeNumber { get; set; }
         public string Appartment { get; set; }
-        public string PostIndex { get; set; }
-       
-        public Cart Cart { get; set; }
-       
-
+        public string PostIndex { get; set; }      
     }
 }

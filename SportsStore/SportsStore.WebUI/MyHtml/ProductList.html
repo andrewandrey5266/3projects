@@ -1,0 +1,64 @@
+﻿<h5>current page : {{currentPage}};
+    <br />
+    category : {{categ}};
+    <br />
+    items on page: {{products.Products.length}}</h5>
+
+<div class="container">
+    <div ng-repeat="product in products.Products | filter : search.Name">
+        <div class="col-sm-4 panel panel-primary">
+            <div class="panel-heading">{{product.Name}}</div>
+            <div class="panel-body">
+                <h1>{{product.Id}}</h1>
+                <img type="image" src="~/Content/Images/{{product.Id}}.jpg" width="300" height="200" alt="Image" />
+                
+
+            </div>
+            <div class="btn-group btn-group-justified">
+               <!-- <div class="btn-group">
+                    @if (Session["Auth"] != null){      
+                               
+                        using (Html.BeginForm("AddToCart", "Cart")){                        
+                            <input type="hidden" name="Id" value="{{product.Id}}" />
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                            <input type="submit" class="btn btn-success" value="Add to cart" />
+
+                    }  }
+                </div>-->
+                <div class="btn-group">
+                    <h4 align="center">${{product.Price}}</h4>
+                </div>
+                <!--<div class="btn-group">
+                    @using (Html.BeginForm("Detailed", "Product")){
+                            <input type="hidden" name="Id" value="{{product.Id}}" />
+                    <input type="submit" class="btn btn-warning" value="See Details" />
+                    }
+                </div>-->
+
+                <div class="btn-group" method="get">
+                    <form action="Product/Detailed">
+                        <input type="hidden" name="Id" value="{{product.Id}}" />
+                        <input type="submit" class="btn btn-warning" value="See Details" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class=" text-center">
+
+        <ul class="pagination" ng-repeat="p in pages">
+            <li>
+              <h1>  
+                  <a ui-sref="category({categ : '{{categ}}', page : {{p}} })">
+                        {{p}}
+                    </a>
+
+              </h1>
+            </li>
+        </ul>
+
+      
+    </div>
+</footer>

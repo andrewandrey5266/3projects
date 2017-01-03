@@ -14,8 +14,8 @@ namespace SportsStore.Service.Interfaces
 
         int GetProductQuantity(CartViewModel cartVM);
 
-        Cart GetNewCart();
+        Cart GetNewCart(UserViewModel user);
 
-       
+        void CompleteCart(CartViewModel cartVM, string deliveryId);
     }
 }

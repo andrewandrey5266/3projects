@@ -27,7 +27,8 @@ namespace SportsStore.WebUI.Controllers
             if (cartVM.Cart == null)
                 cartVM = GetCart();
             ViewBag.TotalPrice = cartService.ComputeTotalValue(cartVM);
-            ViewBag.NumOfProducs = cartService.GetProductQuantity(cartVM);
+            var num = cartService.GetProductQuantity(cartVM); ;
+            ViewBag.NumOfProducts = cartService.GetProductQuantity(cartVM);
             return PartialView(cartVM);
         }
 
@@ -45,6 +46,8 @@ namespace SportsStore.WebUI.Controllers
         }
         public RedirectToRouteResult AddToCart(CartViewModel cart, string Id, string returnUrl)
         {
+            if (cart.Cart == null)
+                cart = GetCart();
             cart.ProductId = Id;
             ///
             Product product = repository.Products
@@ -75,18 +78,19 @@ namespace SportsStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ViewResult Checkout(CartViewModel cart, DeliveryViewModel shippingDetails)
+        public ViewResult Checkout(CartViewModel cart, DeliveryViewModel deliveryVM)
         {
-      
+
             if (cartService.GetProductQuantity(cart) == 0)
             {
                 ModelState.AddModelError("", "Sorry, your cart is empty!");
             }
             if (ModelState.IsValid)
             {
-                delivertyServ.SaveDelivery(shippingDetails);
+                delivertyServ.SaveDelivery(deliveryVM,cart);
                 Session["Cart"] = null;
-                return View("Completed");
+                
+                return View("Completed", deliveryVM);
             }
             else
             {
@@ -99,7 +103,7 @@ namespace SportsStore.WebUI.Controllers
             CartViewModel cartVM = (CartViewModel)Session["Cart"];
             if (cartVM == null)
             {
-                cartVM = new CartViewModel { Cart = cartService.GetNewCart() };
+                cartVM = new CartViewModel { Cart = cartService.GetNewCart((UserViewModel)Session["Auth"]) };
                 Session["Cart"] = cartVM;         
             }
             return cartVM;

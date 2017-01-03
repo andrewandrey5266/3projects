@@ -14,14 +14,28 @@ namespace SportsStore.Service.Services
     {
         EFDbContext context = new EFDbContext();
 
-        public IEnumerable<Product> GetProduct(string category, int PageSize, int page)
+        public List<Product> GetProducts(string category, int pageSize, int page)
         {
-            return context.Products
+            if (category == "all") category = null;
+
+           
+                List<Product> c = context.Products
                   .Include("Discount")
                   .Where(p => category == null || p.Category.Name == category)
                   .OrderBy(p => p.Id)
-                  .Skip((page - 1) * PageSize)
-                  .Take(PageSize);
+                  .Skip((page - 1) * pageSize)
+                  .Take(pageSize).ToList();
+
+            return c;
+        }
+        public List<Product> GetProducts(string category)
+        {
+            if (category == "all") category = null;
+            return context.Products
+                  .Include("Category")
+                  .Include("Discount")
+                  .Where(p => category == null || p.Category.Name == category)         
+                  .ToList();
         }
         public List<Product> GetProducts()
         {
@@ -30,7 +44,6 @@ namespace SportsStore.Service.Services
                 .Include("Discount")
                 .ToList();
         }
-
         public IEnumerable<ProductViewModel> GetProductsVM()
         {
             var a = context.Products
@@ -45,23 +58,29 @@ namespace SportsStore.Service.Services
             return result;
 
         }
-
         public Product GetProduct(string id)
         {
-            return GetProducts().Where(i => i.Id == id).First();
+            return GetProducts().Where(i => i.Id == id).FirstOrDefault();
         }
         public void SaveProduct(ProductViewModel product)
         {
-            var prod = context.Products.Find(product.Id) ?? new Product();
-                       
+            var prod = context.Products.Find(product.Id);
+            if (prod == null)
+            {
+                prod = new Product();
+                context.Products.Add(prod);
+            }
             prod.Name = product.Name;
             prod.Description = product.Description;
-            prod.Category = product.Category;
-            prod.Discount = product.Discount;
+            prod.Category = context.Categories
+                .Where(i => i.Name == product.CategoryName)
+                .FirstOrDefault();
+            prod.Discount = context.Discounts
+                .Where(i=> i.Percentage == product.DiscountPercentage)
+                .FirstOrDefault();
             prod.Price = product.Price;
-          
-            context.Products.Add(prod);
-
+            prod.InStock = product.InStock;
+      
             context.SaveChanges();
         }        
         public Product DeleteProduct(string productId)
@@ -74,13 +93,11 @@ namespace SportsStore.Service.Services
             }
             return product;
         }
-
         public void EditProduct(string id, ProductViewModel product)
         {
             DeleteProduct(id);
             SaveProduct(product);            
         }
-
         private List<ProductViewModel> parse(List<Product> list)
         {
             var parsed = new List<ProductViewModel>();
@@ -88,6 +105,24 @@ namespace SportsStore.Service.Services
                 parsed.Add(new ProductViewModel(c));
             
             return parsed;
-        }        
+        }
+
+        public List<Product> SearchProduct(string name, string category, int pageSize, int page)
+        {
+            //var a = GetProducts(category, pageSize, page);
+            //var b = a.Where(i => i.Name.ToLower().Contains(name.ToLower()))
+            //    .ToList();
+
+            //return b;
+            return GetProducts(category)
+                .Where(i => i.Name.ToLower().Contains(name.ToLower()))
+                .ToList()
+                .OrderBy(i => i.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize).ToList();
+        }
+
+
+      
     }
 }

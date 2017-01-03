@@ -50,33 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EFDbContext.cs" />
-    <Compile Include="Migrations\201612081912079_InitialCreate.cs" />
-    <Compile Include="Migrations\201612081912079_InitialCreate.Designer.cs">
-      <DependentUpon>201612081912079_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201612251050029_StartMigration.cs" />
+    <Compile Include="Migrations\201612251050029_StartMigration.Designer.cs">
+      <DependentUpon>201612251050029_StartMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612102228075_DeliveryMigration.cs" />
-    <Compile Include="Migrations\201612102228075_DeliveryMigration.Designer.cs">
-      <DependentUpon>201612102228075_DeliveryMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201612252036403_WishlistMigration.cs" />
+    <Compile Include="Migrations\201612252036403_WishlistMigration.Designer.cs">
+      <DependentUpon>201612252036403_WishlistMigration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612130821544_ProductRistrictMigration.cs" />
-    <Compile Include="Migrations\201612130821544_ProductRistrictMigration.Designer.cs">
-      <DependentUpon>201612130821544_ProductRistrictMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201612252037346_Wishlist2Migration.cs" />
+    <Compile Include="Migrations\201612252037346_Wishlist2Migration.Designer.cs">
+      <DependentUpon>201612252037346_Wishlist2Migration.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201612151925168_UserReviewMigration.cs" />
-    <Compile Include="Migrations\201612151925168_UserReviewMigration.Designer.cs">
-      <DependentUpon>201612151925168_UserReviewMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612172147163_DeleteAddressMigration.cs" />
-    <Compile Include="Migrations\201612172147163_DeleteAddressMigration.Designer.cs">
-      <DependentUpon>201612172147163_DeleteAddressMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612172229157_ReviewDateTimeMigration.cs" />
-    <Compile Include="Migrations\201612172229157_ReviewDateTimeMigration.Designer.cs">
-      <DependentUpon>201612172229157_ReviewDateTimeMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201612201845427_DiscountMigration.cs" />
-    <Compile Include="Migrations\201612201845427_DiscountMigration.Designer.cs">
-      <DependentUpon>201612201845427_DiscountMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201612252038124_Wishlist3Migration.cs" />
+    <Compile Include="Migrations\201612252038124_Wishlist3Migration.Designer.cs">
+      <DependentUpon>201612252038124_Wishlist3Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,26 +80,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201612081912079_InitialCreate.resx">
-      <DependentUpon>201612081912079_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612251050029_StartMigration.resx">
+      <DependentUpon>201612251050029_StartMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612102228075_DeliveryMigration.resx">
-      <DependentUpon>201612102228075_DeliveryMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612252036403_WishlistMigration.resx">
+      <DependentUpon>201612252036403_WishlistMigration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612130821544_ProductRistrictMigration.resx">
-      <DependentUpon>201612130821544_ProductRistrictMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612252037346_Wishlist2Migration.resx">
+      <DependentUpon>201612252037346_Wishlist2Migration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612151925168_UserReviewMigration.resx">
-      <DependentUpon>201612151925168_UserReviewMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612172147163_DeleteAddressMigration.resx">
-      <DependentUpon>201612172147163_DeleteAddressMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612172229157_ReviewDateTimeMigration.resx">
-      <DependentUpon>201612172229157_ReviewDateTimeMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201612201845427_DiscountMigration.resx">
-      <DependentUpon>201612201845427_DiscountMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201612252038124_Wishlist3Migration.resx">
+      <DependentUpon>201612252038124_Wishlist3Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -19,7 +19,7 @@ namespace SportsStore.WebUI.Binder
             // create the Cart if there wasn't one in the session data
             if (cart == null)
             {
-                cart = new CartViewModel() { Cart = cartServ.GetNewCart() };
+                cart = new CartViewModel() { Cart = cartServ.GetNewCart((UserViewModel)controllerContext.HttpContext.Session["Auth"]) };
                 controllerContext.HttpContext.Session[sessionKey] = cart;
             }
             // return the cart

@@ -35,3 +35,12 @@ C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.dll
 C:\Users\Dusheba\Documents\GitHub\5semester\course work\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.pdb
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.dll.config
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.dll
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\SportsStore.Domain.pdb
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.dll
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.xml
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\bin\Debug\EntityFramework.SqlServer.xml
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.dll
+D:\repository\5semester\course work\SportsStore\SportsStore.Domain\obj\Debug\SportsStore.Domain.pdb

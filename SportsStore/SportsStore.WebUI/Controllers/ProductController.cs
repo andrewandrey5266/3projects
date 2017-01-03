@@ -15,7 +15,7 @@ namespace SportsStore.WebUI.Controllers
     {
         private IProductService productServ;
         IReviewService reviewServ;
-        public int PageSize = 9;
+        public int PageSize =3;
 
         public ProductController(IProductService prodserv, IReviewService revserv)
         {
@@ -25,15 +25,15 @@ namespace SportsStore.WebUI.Controllers
 
         public ViewResult List(string category = null, int page = 1)
         {
+            
             ProductsListViewModel model = new ProductsListViewModel
             {
-                Products = productServ.GetProduct(category, PageSize, page),
-                PagingInfo = new PagingInfo
-                {
-                    CurrentPage = page,
-                    ItemsPerPage = PageSize,
-                    TotalItems = category == null ? productServ.GetProducts().Count : 3
-                },
+                Products = productServ.GetProducts(category, PageSize, page),
+                PagingInfo = new PagingInfo(
+                    page,
+                    PageSize,
+                    category == null ? productServ.GetProducts().Count : 2
+                ),
                 CurrentCategory = category
             };
             return View(model);
@@ -46,6 +46,7 @@ namespace SportsStore.WebUI.Controllers
                 Product = productServ.GetProduct(id),
                 Reviews = reviewServ.GetReviews(id)
             };
+         
             return View(model);
         }
 

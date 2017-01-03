@@ -16,6 +16,5 @@ namespace SportsStore.Domain.Entities
         public string Appartment { get; set; }
         public string PostIndex { get; set; }
 
-        public Cart Cart { get; set; }
     }
 }

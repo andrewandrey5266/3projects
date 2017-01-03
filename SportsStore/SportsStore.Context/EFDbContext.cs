@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using SportsStore.Domain.Entities;
 
 namespace SportsStore.Context
@@ -23,5 +18,11 @@ namespace SportsStore.Context
         public DbSet<User> Users { get; set; }
 
         public DbSet<Review> Reviews { get; set; }
+
+        public DbSet<Discount> Discounts { get; set; }
+
+        public DbSet<Image> Images { get; set; }
+
+        public DbSet<WishList> WishLists { get; set; }
     }
 }

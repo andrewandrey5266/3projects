@@ -11,5 +11,12 @@ namespace SportsStore.ViewModel.Models
         {
             get { return (int)Math.Ceiling((decimal)TotalItems / ItemsPerPage); }
         }
+
+        public PagingInfo(int totalItems, int itemsPerPage, int currentPage)
+        {
+            this.TotalItems = totalItems;
+            this.ItemsPerPage = itemsPerPage;
+            this.CurrentPage = currentPage;
+        }
     }
 }

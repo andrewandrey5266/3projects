@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using SportsStore.ViewModel.Models;
 using SportsStore.WebUI.Models;
 using SportsStore.Service.Interfaces;
+using SportsStore.Service.Services;
 namespace SportsStore.WebUI.Controllers
 {
     public class AccountController : Controller
@@ -38,7 +39,7 @@ namespace SportsStore.WebUI.Controllers
                 {
                     //return Redirect(Url.Action("Index", "Admin"));
                     Session["Auth"] = user;
-                    return RedirectToAction("List", "Product");
+                    return Redirect("/");
                 }
                 if (user == null)
                 {
@@ -69,10 +70,17 @@ namespace SportsStore.WebUI.Controllers
               
                 if (result == "success")
                     return RedirectToAction("List", "Product");
-                if (result == null)
+                if (result == "email error")
                 {
-                    ModelState.AddModelError("", "Incorrect username or password");
-                    return View();
+                    ModelState.AddModelError("Email", "User with this email already exists");
+                    registryVM.Email = "";
+                    return View(registryVM);
+                }
+                if (result == "logname error")
+                {
+                    ModelState.AddModelError("Logname", "User with this logname already exists");
+                    registryVM.Logname = "";
+                    return View(registryVM);
                 }
 
                 else return View("Error");
@@ -80,12 +88,15 @@ namespace SportsStore.WebUI.Controllers
             }
             else
             {
-                return View();
+                return View(new ProfileViewModel());
             }
         }
 
-        public ViewResult Profile()
+        public ViewResult MyProfile()
         {
+            var user = (UserViewModel)Session["Auth"];
+            user.wishes = new WishListViewModel(new WishListService().GetWishes(user.Id));
+            Session["Auth"] = user;
             return View((UserViewModel)Session["Auth"]);
         }
     }

@@ -8,6 +8,6 @@ namespace SportsStore.Service.Interfaces
 {
     public interface IDeliveryService
     {
-        void SaveDelivery(DeliveryViewModel delivery);
+        void SaveDelivery(DeliveryViewModel delivery, CartViewModel cart);
     }
 }

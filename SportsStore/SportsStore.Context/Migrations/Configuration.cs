@@ -9,8 +9,7 @@ namespace SportsStore.Context.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "SportsStore.Context.EFDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SportsStore.Context.EFDbContext context)

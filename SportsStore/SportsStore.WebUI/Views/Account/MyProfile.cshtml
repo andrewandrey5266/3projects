@@ -1,0 +1,47 @@
+﻿@model SportsStore.ViewModel.Models.UserViewModel
+@using SportsStore.Domain.Entities;
+
+@{
+    ViewBag.Title = "Profile";
+    Layout = null;
+}
+<div class = "col-md-offset-1">
+<h2>Profile</h2>
+<h3>
+<b>Name :</b> @Model.Name  <br /> <br />
+<b>Surname :</b> @Model.Surname <br /> <br />
+<b>Email :</b> @Model.Email <br /> <br />
+@*    Role : </b>@if(@Model.IsAdmin)
+             {
+        <p>Admin</p>
+            }
+            else
+            {
+        <p>User</p>
+            }</h3> <br /> <br />*@
+    <h1 >WISHES</h1>
+    <div ng-controller="wishListController" >   
+
+<h1>NAME {{name}}; length a: {{wishes.length}} b:{{wishes.wishes.length}};</h1>
+        <table >
+            <tr ng-repeat="w in wishes">
+                <th>{{w.Description}}</th>
+                <th>{{w.Product.Name}}</th>
+                <th>{{w.User.Name}}</th>
+            </tr>
+        </table>
+    </div>
+<h2>My wish products</h2>
+<table>  
+
+@*@foreach (var c in @Model.wishes.wishes)
+{
+    <tr>
+        <td>
+            <h4> - @c.Product.Name</h4>
+        </td>     
+    </tr>
+}*@
+  
+</table>
+</div>
